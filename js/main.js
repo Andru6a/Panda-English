@@ -38,6 +38,10 @@
     }
 
 
+    let title = document.getElementById('title-change');
+    
+    setInterval(() => title.innerText = 'взрослых', 4000);
+    setInterval(() => title.innerText = 'детей', 8000);
     // const word = document.querySelector('.word');
 
     // function animateWord(word) {
