@@ -118,7 +118,24 @@ body {
     padding: 100px 0 0px 0;
 }
 
+// =================NAV OPEN ===============
+.body--opened-menu {
+    overflow: hidden;
+}
 
+.body--opened-menu .burger-icon span {
+    background: transparent;
+}
+
+.body--opened-menu .burger-icon span::before {
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+.body--opened-menu .burger-icon span::after {
+    bottom: 0px;
+    transform: rotate(-45deg);
+}
 
 
 /*========================HEADER========================*/
@@ -325,19 +342,20 @@ body {
 
 .burger-icon {
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 24px;
+    height: 24px;
     align-items: center;
     justify-content: center;
-    z-index: 11;
+    z-index: 151;
+    opacity: 0.88;
 }
 
 .burger-icon span,
 .burger-icon span::before,
 .burger-icon span::after {
     display: block;
-    width: 30px;
-    height: 3px;
+    width: 14px;
+    height: 2px;
     border-radius: 100px;
     background: $text-primary;
     transition: $transition;
@@ -361,7 +379,19 @@ body {
     bottom: -8px;
 }
 
+
+// ===================Открытие/Закрытие бургера===============================
+
+
+
+.body--opened-menu .nav {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+}
+
 // ==========================HERO=========================================
+
 .hero {
 
     &__inner {}
@@ -802,7 +832,6 @@ body {
 @media (max-width: 900px) {
     .header__top {
         backdrop-filter: none;
-
     }
 
     .container__header {
@@ -821,15 +850,17 @@ body {
         z-index: 150;
         flex-direction: column;
         align-items: center;
-        padding: 10vh 24px;
+        padding: 10vh 24px 24px 24px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.48) 100%);
         backdrop-filter: blur(10px);
         align-items: center;
-
-        display: none;
-
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition;
     }
-
+    .nav {
+    }
 
 
     .nav__list {
@@ -843,6 +874,7 @@ body {
         width: 100%;
         position: relative;
         padding: 10px 0;
+
         &::after {
             content: "";
             position: absolute;
@@ -865,12 +897,14 @@ body {
     }
 
     .nav__contacts-tel {
-        min-width: 272px;
-        background: #EDF1F6;;
+        background: #EDF1F6;
+        min-width: 300px;
     }
 
     .socials__header {
         display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
 
     .nav__contacts-tg {
@@ -881,19 +915,46 @@ body {
         display: flex;
     }
 
-    // ==================================================
 
-    // .nav {
-    //     transform: translateY(-50%);
-    //     opacity: 0;
-    //     visibility: hidden;
-    //     transition: var(--transition);
-    // }
 
-    // .body--opened-menu .nav {
-    //     transform: translateY(0%);
-    //     opacity: 1;
-    //     visibility: visible;
-    // }
+    .nav__items-plus {
+        display: none;
+        position: unset;
+        visibility: visible;
+        border: none;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        opacity: 0;
+        transition: $transition;
+    }
+
+    .nav__items-plus--opened {
+        display: block;
+        opacity: 1;
+
+    }
+
+    .nav__link {
+        padding: 4px 0;
+
+        &:last-child {
+            padding-bottom: 12px;
+        }
+    }
+
+    .nav__item {
+        margin-bottom: 0;
+    }
+
+    .nav__title {
+        margin-bottom: 4px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
 
 }
