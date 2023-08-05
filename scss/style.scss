@@ -22,13 +22,18 @@ body {
 
     .nav {
 
-        // transition: $transition;
         &__items-plus-special1 {
             visibility: visible;
+            opacity: 1;
         }
 
         &__title-menu1 {
             opacity: .65;
+        }
+
+        &__items-plus-special1--opene {
+            visibility: visible;
+            opacity: 1;
         }
     }
 }
@@ -41,6 +46,7 @@ body {
     .nav {
         &__items-plus-special2 {
             visibility: visible;
+            opacity: 1;
         }
 
         &__title-menu2 {
@@ -121,6 +127,11 @@ body {
 // =================NAV OPEN ===============
 .body--opened-menu {
     overflow: hidden;
+
+    & .header__top {
+        // transition: $transition;
+        // backdrop-filter: none;
+    }
 }
 
 .body--opened-menu .burger-icon span {
@@ -190,19 +201,21 @@ body {
 
     &__items {}
 
-    &__items-plus-special1 {
+    &__items-plus {
+        transition: $transition;
         position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__items-plus-special1 {
         top: 105%;
         left: 11%;
-        visibility: hidden;
     }
 
     &__items-plus-special2 {
-        position: absolute;
         top: 105%;
         left: 21.2%;
-        visibility: hidden;
-        visibility: hidden;
     }
 
     // ========================Открытие nav menu=========================================================
@@ -228,6 +241,7 @@ body {
             opacity: 0.65;
         }
     }
+
 
     &__title-button {
         font-weight: 700;
@@ -389,6 +403,7 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
 
 // ==========================HERO=========================================
 
@@ -565,6 +580,16 @@ body {
 
         &-col {}
 
+        &-title {
+            cursor: default;
+            font-size: 18px;
+            font-weight: 700;
+            background: transparent;
+            margin-bottom: 12px;
+            width: 100%;
+            text-align-last: left;
+            color: $text-primary;
+        }
 
         &-list {
             font-size: 18px;
@@ -576,10 +601,6 @@ body {
 
         &-item {
             margin-bottom: 4px;
-
-            &:first-child {
-                margin-bottom: 12px;
-            }
         }
 
         &-text {
@@ -598,7 +619,7 @@ body {
             &--camp {
                 margin: 35px 0 0 0;
                 font-weight: 700;
-                // margin-top: -12px;
+                font-size: 18px;
             }
         }
     }
@@ -617,11 +638,20 @@ body {
                 width: 100%;
                 height: 100%;
                 @include pos(97, 94);
-                background: url('../Images/Footer/text+arrow\ 1.svg') 0 0 no-repeat;
+                background: url('../Images/Footer/text+arrow1.svg') 0 0 no-repeat;
             }
         }
 
-        &-qr {}
+        &-qr {
+            width: 130px;
+            height: 130px;
+            background: url('../Images/Footer/qr-code.jpg') 0 0 no-repeat;
+
+            &:last-child {
+                background: url('../Images/Footer/qr-code2.jpg') 0 0 no-repeat;
+            }
+
+        }
 
         &-img {
             & img {
@@ -801,11 +831,6 @@ body {
         margin-right: 30px;
     }
 
-
-    .footer__images-img {
-        // width: 136px;
-        // height: 134px;
-    }
 }
 
 @media (max-width: 1050px) {
@@ -831,6 +856,10 @@ body {
 
 @media (max-width: 900px) {
     .header__top {
+        backdrop-filter: blur(10px);
+    }
+
+    .header__top--none {
         backdrop-filter: none;
     }
 
@@ -850,7 +879,7 @@ body {
         z-index: 150;
         flex-direction: column;
         align-items: center;
-        padding: 10vh 24px 24px 24px;
+        padding: 90px 24px 24px 24px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.48) 100%);
         backdrop-filter: blur(10px);
         align-items: center;
@@ -859,8 +888,8 @@ body {
         visibility: hidden;
         transition: $transition;
     }
-    .nav {
-    }
+
+    .nav {}
 
 
     .nav__list {
@@ -920,17 +949,16 @@ body {
     .nav__items-plus {
         display: none;
         position: unset;
-        visibility: visible;
         border: none;
         background: none;
         box-shadow: none;
         padding: 0;
-        opacity: 0;
         transition: $transition;
     }
 
     .nav__items-plus--opened {
         display: block;
+        visibility: visible;
         opacity: 1;
 
     }
@@ -955,6 +983,101 @@ body {
         }
     }
 
+    // ==============================================
 
+
+    .footer {
+        &__nav-links {
+            gap: 0;
+        }
+
+        &__nav-title {
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                opacity: 0.65;
+            }
+        }
+
+        &__nav-list {
+            display: none;
+            opacity: 0;
+            transition: $transition;
+        }
+
+        &__nav-list--opened {
+            display: block;
+            opacity: 1;
+        }
+
+        &__images-qrs::after {
+            content: "";
+            width: 180px;
+            height: 100px;
+            @include pos(60, 100);
+            background: url('../Images/Footer/text+arrow2.svg') 0 0 no-repeat;
+            z-index: 5;
+        }
+
+
+        &__images-qrs {
+            flex-direction: column;
+        }
+
+        &__images-qr {
+            width: 136px;
+            height: 45px;
+            background: url('../Images/Footer/apple-store.svg') 0 0 no-repeat;
+
+            &:last-child {
+                background: url('../Images/Footer/google-play.svg') 0 0 no-repeat;
+            }
+        }
+
+        &__staff-info {
+            display: none;
+        }
+    }
+}
+
+
+
+@media (max-width: 700px) {
+    .footer__socials {
+        flex-direction: column;
+    }
+
+    .footer__socials-info {
+        flex-direction: column;
+
+        margin-bottom: 20px;
+    }
+
+    .footer__nav {
+        flex-direction: column;
+        align-items: start;
+    }
+    .footer__nav-col {
+        width: 100%;
+    }
+    .footer__images {
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .footer__images-img {
+        // width: 136px;
+        // height: 134px;
+    }
+
+    .footer__images-qrs {
+        min-height: 240px;
+    }
+
+    .footer__images-qrs::after {
+        @include pos(65, 60);
+    }
 
 }

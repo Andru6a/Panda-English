@@ -49,75 +49,64 @@
 
     // Бургер 
 
-    // добавить закрытие по клику по ссылке
-    // добавить закрытие по клику по ссылке
-    // добавить закрытие по клику по ссылке && !burgerNavLink
 
     document.addEventListener('click', burgerInit)
 
     function burgerInit(e) {
 
         const burgerIcon = e.target.closest('.burger-icon')
-        // const burgerNavLink = e.target.closest('.nav__link')
+        const burgerNavLink = e.target.closest('.nav__link')
+        const burgerNavLink2 = e.target.closest('.nav__title--special')
+        const headerBg = document.querySelector('.header__top')
 
-        if (!burgerIcon) return
+        if (!burgerIcon && !burgerNavLink && !burgerNavLink2) return
         if (document.documentElement.clientWidth > 900) return
 
+        e.preventDefault()
         if (!document.body.classList.contains('body--opened-menu')) {
             document.body.classList.add('body--opened-menu')
+            headerBg.classList.add('header__top--none')
         } else {
             document.body.classList.remove('body--opened-menu')
+            setTimeout(() => {
+
+                headerBg.classList.remove('header__top--none')
+            }, 400);
+
+
+            const a = document.querySelectorAll('.nav__items-plus')
+            a.forEach((e) => {
+                e.classList.remove('nav__items-plus--opened')
+            })
         }
-
     }
-
 
 
     // Nav в Burger
 
-    const navItem = document.querySelectorAll('.nav__items')
+    const navOpenerHeader = document.querySelectorAll('.nav__title')
 
-    navItem.forEach((e) => {
-
-        const navUl = e.querySelector('.nav__items-plus')
-        const navUlOpened = document.querySelector('.nav__items-plus')
-        const a = document.querySelector('.nav__title')
-
-        if (!(e.querySelector('.nav__items-plus') !== null)) return
-
-        // console.log(e)
+    navOpenerHeader.forEach((e) => {
         e.addEventListener("click", function () {
-            // console.log(e)
-            // console.log(e.a == null)
-            // if (navUl.classList.contains('nav__items-plus--opened') && e.a === true) {
-            //     navUl.classList.remove('nav__items-plus--opened')
-            // }
-            // else 
-            navUl.classList.add('nav__items-plus--opened')
+            const navToggle = e.nextElementSibling
+            if (navToggle !== null) {
+                navToggle.classList.toggle('nav__items-plus--opened')
+            }
         })
     })
 
 
+    // Nav в Footer
 
-    // const ab = document.querySelectorAll('.nav__title')
+    const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
 
-    // ab.forEach((e) => {
-    //     const abc = e.querySelector('.nav__items-plus')
-    //     e.addEventListener('click', function () {
-    //         abc.classList.remove('nav__items-plus--opened')
-    //     })
-    // })
+    navOpenerFooter.forEach((e) => {
+        e.addEventListener("click", function () {
+            const navToggle = e.nextElementSibling
+            navToggle.classList.toggle('footer__nav-list--opened')
+        })
+    })
 
-    
-    // navClose.forEach((e) => {
-    //     if (!(e.querySelector('div .nav__items-plus') !== null)) return
-    //     console.log(e)
-    //     e.addEventListener("click", function () {
-    //         console.log(e)
-    //         if (navUl.classList.contains('nav__items-plus--opened')) {
-    //             navUl.classList.remove('nav__items-plus--opened')
-    //         }
-    //     })
-    // })
+
 
 })()
