@@ -1099,6 +1099,8 @@ body {
   }
   .footer__nav-list {
     opacity: 0;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     max-height: 0;
     visibility: hidden;
   }

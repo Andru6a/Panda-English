@@ -1004,7 +1004,7 @@ body {
         &__nav-list {
             // display: none;
             opacity: 0;
-            // transition: $transition2;
+            transition: $transition2;
             max-height: 0;
             visibility: hidden;
         }
