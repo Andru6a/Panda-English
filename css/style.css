@@ -1057,20 +1057,19 @@ body {
     display: flex;
   }
   .nav__items-plus {
-    display: none;
     position: unset;
     border: none;
     background: none;
     -webkit-box-shadow: none;
             box-shadow: none;
     padding: 0;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    max-height: 0;
   }
   .nav__items-plus--opened {
-    display: block;
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
   }
   .nav__link {
     padding: 4px 0;
@@ -1099,13 +1098,12 @@ body {
     opacity: 0.65;
   }
   .footer__nav-list {
-    display: none;
     opacity: 0;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    max-height: 0;
+    visibility: hidden;
   }
   .footer__nav-list--opened {
-    display: block;
+    visibility: visible;
     opacity: 1;
   }
   .footer__images-qrs::after {

@@ -945,24 +945,25 @@ body {
     }
 
 
-
+// ===========================
     .nav__items-plus {
-        display: none;
+        // display: none;
         position: unset;
         border: none;
         background: none;
         box-shadow: none;
         padding: 0;
-        transition: $transition;
+        transition: $transition2;
+        max-height: 0;
     }
 
     .nav__items-plus--opened {
-        display: block;
-        visibility: visible;
+        // display: block;
         opacity: 1;
+        visibility: visible;
 
     }
-
+// ========================
     .nav__link {
         padding: 4px 0;
 
@@ -1001,13 +1002,16 @@ body {
         }
 
         &__nav-list {
-            display: none;
+            // display: none;
             opacity: 0;
-            transition: $transition;
+            // transition: $transition2;
+            max-height: 0;
+            visibility: hidden;
         }
 
         &__nav-list--opened {
-            display: block;
+            // display: block;
+            visibility: visible;
             opacity: 1;
         }
 

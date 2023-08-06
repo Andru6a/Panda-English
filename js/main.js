@@ -5,7 +5,6 @@
 
     document.addEventListener('click', navLinks)
 
-
     function navLinks(e) {
         const navMenu1 = e.target.closest('.nav__title-menu1')
         const navMenu2 = e.target.closest('.nav__title-menu2')
@@ -26,7 +25,6 @@
             } else
                 navOpener.classList.remove('body--opened-nav1')
 
-
         } else {
             navOpener.classList.remove('body--opened-nav1')
             if (!navOpener.classList.contains('body--opened-nav2')) {
@@ -37,8 +35,8 @@
     }
 
 
-    // Анимация текста HERO
 
+    // Анимация текста HERO
 
     let title = document.getElementById('title-change');
 
@@ -48,7 +46,6 @@
 
 
     // Бургер 
-
 
     document.addEventListener('click', burgerInit)
 
@@ -73,40 +70,108 @@
                 headerBg.classList.remove('header__top--none')
             }, 400);
 
-
-            const a = document.querySelectorAll('.nav__items-plus')
-            a.forEach((e) => {
+            const closeNav = document.querySelectorAll('.nav__items-plus')
+            closeNav.forEach((e) => {
                 e.classList.remove('nav__items-plus--opened')
+                e.style.maxHeight = 0;
             })
         }
     }
 
 
-    // Nav в Burger
 
-    const navOpenerHeader = document.querySelectorAll('.nav__title')
+    // Nav Header
 
-    navOpenerHeader.forEach((e) => {
-        e.addEventListener("click", function () {
+
+    const navTitle = document.querySelectorAll('.nav__title');
+    const navItem = document.querySelector('.nav__items-plus');
+    navTitle.forEach((e) => {
+        e.addEventListener('click', () => {
             const navToggle = e.nextElementSibling
-            if (navToggle !== null) {
-                navToggle.classList.toggle('nav__items-plus--opened')
-            }
-        })
+            if (navToggle !== null){
+            if (navToggle.classList.contains('nav__items-plus--opened')) {
+                navToggle.classList.remove('nav__items-plus--opened');
+                navToggle.style.maxHeight = 0;
+            } else {
+                navToggle.classList.add('nav__items-plus--opened');
+                navToggle.style.maxHeight = navItem.scrollHeight + 'px';
+            }}
+        });
     })
+
 
 
     // Nav в Footer
 
-    const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
+    // const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
 
-    navOpenerFooter.forEach((e) => {
-        e.addEventListener("click", function () {
+    // navOpenerFooter.forEach((e) => {
+    //     e.addEventListener("click", function () {
+    //         const navToggle = e.nextElementSibling
+    //         navToggle.classList.toggle('footer__nav-list--opened')
+    //     })
+    // })
+
+
+    const navTitleFooter = document.querySelectorAll('.footer__nav-title')
+    const navItemFooter = document.querySelector('.footer__nav-list');
+    navTitleFooter.forEach((e) => {
+        e.addEventListener('click', () => {
             const navToggle = e.nextElementSibling
-            navToggle.classList.toggle('footer__nav-list--opened')
-        })
+            if (navToggle !== null){
+            if (navToggle.classList.contains('footer__nav-list--opened')) {
+                navToggle.classList.remove('footer__nav-list--opened');
+                navToggle.style.maxHeight = 0;
+            } else {
+                navToggle.classList.add('footer__nav-list--opened');
+                navToggle.style.maxHeight = navItemFooter.scrollHeight + 'px';
+            }}
+        });
     })
 
-
-
 })()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const navTitle = document.querySelectorAll('.nav__title');
+    //     const navItem = document.querySelectorAll('.nav__items-plus');
+    //     navItem.forEach((e) => {
+    //         console.log(e)
+    //         if (!document.body.classList.contains('body--opened-menu')) {
+    //             navItem.classList.remove('nav__items-plus--opened');
+    //             navItem.style.maxHeight = 0;
+    //         }
+    //     })
+
+
+    // Nav в Burger
+
+    // const navOpenerHeader = document.querySelectorAll('.nav__title')
+
+    // navOpenerHeader.forEach((e) => {
+    //     e.addEventListener("click", function () {
+    //         const navToggle = e.nextElementSibling
+    //         if (navToggle !== null) {
+    //             navToggle.classList.toggle('nav__items-plus--opened')
+    //         }
+    //     })
+    // })
+
+
+    // const clickBody = document.body.addEventListener('click', navClosePlus)
+    // const navItemPlus = document.querySelector('.nav__items-plus');
+
+    // function navClosePlus(){
+    //     if (clickBody) navItemPlus.style.maxHeight = 0;
+    // }
