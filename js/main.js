@@ -45,6 +45,16 @@
 
 
 
+    // Замена текста в Hero button
+    let textButton = document.getElementById('button-change')
+    if (document.documentElement.clientWidth < 600) {
+        console.log(textButton)
+        textButton.innerHTML = 'Оставить заявку'
+    }
+
+
+
+
     // Бургер 
 
     document.addEventListener('click', burgerInit)
@@ -88,14 +98,15 @@
     navTitle.forEach((e) => {
         e.addEventListener('click', () => {
             const navToggle = e.nextElementSibling
-            if (navToggle !== null){
-            if (navToggle.classList.contains('nav__items-plus--opened')) {
-                navToggle.classList.remove('nav__items-plus--opened');
-                navToggle.style.maxHeight = 0;
-            } else {
-                navToggle.classList.add('nav__items-plus--opened');
-                navToggle.style.maxHeight = navItem.scrollHeight + 'px';
-            }}
+            if (navToggle !== null) {
+                if (navToggle.classList.contains('nav__items-plus--opened')) {
+                    navToggle.classList.remove('nav__items-plus--opened');
+                    navToggle.style.maxHeight = 0;
+                } else {
+                    navToggle.classList.add('nav__items-plus--opened');
+                    navToggle.style.maxHeight = navItem.scrollHeight + 'px';
+                }
+            }
         });
     })
 
@@ -103,31 +114,54 @@
 
     // Nav в Footer
 
-    // const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
-
-    // navOpenerFooter.forEach((e) => {
-    //     e.addEventListener("click", function () {
-    //         const navToggle = e.nextElementSibling
-    //         navToggle.classList.toggle('footer__nav-list--opened')
-    //     })
-    // })
-
-
-    const navTitleFooter = document.querySelectorAll('.footer__nav-title')
-    const navItemFooter = document.querySelector('.footer__nav-list');
+    const navTitleFooter = document.querySelectorAll('.footer__mobile .footer__nav-title')
+    const navItemFooter = document.querySelector('.footer__mobile .footer__nav-list');
     navTitleFooter.forEach((e) => {
+        if (document.documentElement.clientWidth > 800) return
         e.addEventListener('click', () => {
             const navToggle = e.nextElementSibling
-            if (navToggle !== null){
             if (navToggle.classList.contains('footer__nav-list--opened')) {
                 navToggle.classList.remove('footer__nav-list--opened');
                 navToggle.style.maxHeight = 0;
             } else {
                 navToggle.classList.add('footer__nav-list--opened');
+
+                console.log(navItemFooter)
                 navToggle.style.maxHeight = navItemFooter.scrollHeight + 'px';
-            }}
+            }
         });
     })
+
+    // import Swiper from '../types/modules/effect-cards',
+    // import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
+
+    new Swiper('.who__slider', {
+        FreeMode: true,
+
+        pagination: {
+            type: 'custom',
+            clickable: true,
+            el: '.who__pagination',
+            bulletClass: 'who__pag',
+            bulletActiveClass: 'who__pag--active',
+        },
+
+        // // If we need pagination
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+
+        // // Navigation arrows
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
+
+        // // And if we need scrollbar
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
+    });
 
 })()
 
@@ -138,6 +172,20 @@
 
 
 
+
+
+
+
+
+
+// const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
+
+    // navOpenerFooter.forEach((e) => {
+    //     e.addEventListener("click", function () {
+    //         const navToggle = e.nextElementSibling
+    //         navToggle.classList.toggle('footer__nav-list--opened')
+    //     })
+    // })
 
 
 

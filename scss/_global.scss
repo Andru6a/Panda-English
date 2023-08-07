@@ -1,0 +1,152 @@
+
+body {
+    font-family: "Museo Sans Cyrl", "Arial", sans-serif;
+    line-height: 1.08;
+    color: $text-primary;
+    background: $bg-white;
+    // overflow: hidden;
+}
+
+
+.body--opened-nav1 {
+    .nav__title-arrow1 {
+        transform: rotate(180deg);
+    }
+
+    .nav {
+
+        &__items-plus-special1 {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__title-menu1 {
+            opacity: .65;
+        }
+
+        &__items-plus-special1--opene {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.body--opened-nav2 {
+    .nav__title-arrow2 {
+        transform: rotate(180deg);
+    }
+
+    .nav {
+        &__items-plus-special2 {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__title-menu2 {
+            opacity: .65;
+        }
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    // overflow: hidden;перенес в контейнер
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    overflow: hidden;
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+
+    &__header {
+        overflow: visible;
+        display: flex;
+
+    }
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    background: $bg-primary;
+    border-radius: 20px;
+    color: $text-button;
+    font-size: 20px;
+    line-height: 1.34;
+    transition: $transition;
+    z-index: 5;
+
+    &::before {
+        content: "";
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 75px;
+        background: $bg-primaryHover;
+        border-radius: 20px;
+        transition: opacity 0.5s ease-in-out;
+        z-index: -1000;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+}
+
+.header__hero {
+    padding: 56px 0 90px;
+}
+.main__who{
+    padding-bottom: 90px;
+}
+
+.footer {
+    padding: 100px 0 0px 0;
+}
+
+.footer__mobile {
+    padding: 40px 0 16px 0px;
+}
+
+// =================NAV OPEN ===============
+.body--opened-menu {
+    overflow: hidden;
+
+    & .header__top {
+        // transition: $transition;
+        // backdrop-filter: none;
+    }
+}
+
+.body--opened-menu .burger-icon span {
+    background: transparent;
+}
+
+.body--opened-menu .burger-icon span::before {
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+.body--opened-menu .burger-icon span::after {
+    bottom: 0px;
+    transform: rotate(-45deg);
+}
+
+
+

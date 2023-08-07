@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.css">
     <title>Panda English School</title>
 </head>
 
@@ -231,8 +232,9 @@
                     <div class="hero__inner">
                         <div class="hero__content">
                             <h1 class="hero__title">Лучшая школа английского языка в городе для<span id="title-change"
-                                    class="hero__title-mod">детей</span></h1>
-                            <a href="#" class="hero__button button">
+                                    class="hero__title-mod">детей</span>
+                            </h1>
+                            <a href="#" class="hero__button button" id="button-change">
                                 Записаться на занятие
                             </a>
                         </div>
@@ -243,8 +245,39 @@
                 </div>
             </section>
         </header>
-        <main class="main"></main>
-        <footer class="footer">
+
+
+        <main class="main">
+            <div class="main__who who">
+                <div class="container">
+                    <div class="who__inner">
+                        <div class="who__content">
+                            <p class="who__title">Для кого
+                                <span>наша школа?</span>
+                            </p>
+                            <div class="who__pagination">
+                                <span class="who__pag ">Детей и Подростков</span>
+                                <span class="who__pag " >Взрослых</span>
+                                <span class="who__pag">Компаний</span>
+                            </div>
+                        </div>
+                        <div class="who__slider swiper" effect="cards" grab-cursor="true">
+                            <div class="who__slider-inner swiper-wrapper" >
+                                <div class="who__slide swiper-slide">Slide 1</div>
+                                <div class="who__slide swiper-slide">Slide 2</div>
+                                <div class="who__slide swiper-slide">Slide 3</div>
+                            </div>
+                        </div>
+                        <div class="who__text">
+                            <p>Результат виден уже после первых занятий</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="footer footer__pc">
             <div class="container">
                 <div class="footer__inner">
                     <div class="footer__row">
@@ -362,12 +395,10 @@
                                 <div class="footer__images">
                                     <div class="footer__images-qrs">
                                         <div class="footer__images-qr">
-                                            <!-- <img src="Images/Footer/qr-code.jpg"
-                                                alt="QR code для айфона"> -->
+                                            <img src="Images/Footer/qr-code.jpg" alt="QR code для айфона">
                                         </div>
                                         <div class="footer__images-qr">
-                                            <!-- <img src="Images/Footer/qr-code2.jpg"
-                                                alt="QR code для андроида"> -->
+                                            <img src="Images/Footer/qr-code2.jpg" alt="QR code для андроида">
                                         </div>
                                     </div>
                                     <div class="footer__images-img">
@@ -442,13 +473,232 @@
                 </div>
             </div>
         </footer>
+        <footer class="footer footer__mobile">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__row">
+                        <div class="footer__socials">
+                            <div class="footer__socials-info">
+                                <div class="footer__socials-col">
+                                    <div class="footer__socials-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                            viewBox="0 0 24 25" fill="none">
+                                            <path
+                                                d="M14.0497 6.5C15.0264 6.69057 15.924 7.16826 16.6277 7.87194C17.3314 8.57561 17.8091 9.47326 17.9997 10.45M14.0497 2.5C16.0789 2.72544 17.9713 3.63417 19.4159 5.07701C20.8606 6.51984 21.7717 8.41101 21.9997 10.44M10.2266 14.3631C9.02506 13.1615 8.07627 11.8028 7.38028 10.3532C7.32041 10.2285 7.29048 10.1662 7.26748 10.0873C7.18576 9.80695 7.24446 9.46269 7.41447 9.22526C7.46231 9.15845 7.51947 9.10129 7.63378 8.98698C7.98338 8.63737 8.15819 8.46257 8.27247 8.28679C8.70347 7.6239 8.70347 6.76932 8.27247 6.10643C8.15819 5.93065 7.98338 5.75585 7.63378 5.40624L7.43891 5.21137C6.90747 4.67993 6.64174 4.41421 6.35636 4.26987C5.7888 3.9828 5.11854 3.9828 4.55098 4.26987C4.2656 4.41421 3.99987 4.67993 3.46843 5.21137L3.3108 5.36901C2.78117 5.89863 2.51636 6.16344 2.31411 6.52348C2.08969 6.92298 1.92833 7.54347 1.9297 8.0017C1.93092 8.41464 2.01103 8.69687 2.17124 9.26131C3.03221 12.2947 4.65668 15.1571 7.04466 17.545C9.43264 19.933 12.295 21.5575 15.3284 22.4185C15.8928 22.5787 16.1751 22.6588 16.588 22.66C17.0462 22.6614 17.6667 22.5 18.0662 22.2756C18.4263 22.0733 18.6911 21.8085 19.2207 21.2789L19.3783 21.1213C19.9098 20.5898 20.1755 20.3241 20.3198 20.0387C20.6069 19.4712 20.6069 18.8009 20.3198 18.2333C20.1755 17.948 19.9098 17.6822 19.3783 17.1508L19.1835 16.9559C18.8339 16.6063 18.6591 16.4315 18.4833 16.3172C17.8204 15.8862 16.9658 15.8862 16.3029 16.3172C16.1271 16.4315 15.9523 16.6063 15.6027 16.9559C15.4884 17.0702 15.4313 17.1274 15.3644 17.1752C15.127 17.3453 14.7828 17.404 14.5024 17.3222C14.4235 17.2992 14.3612 17.2693 14.2365 17.2094C12.7869 16.5134 11.4282 15.5646 10.2266 14.3631Z"
+                                                stroke="#05203E" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="footer__socials-content">
+                                        <a class="footer__socials-link" href="tel:+375447349201">+ 375 44 734 92
+                                            01</a>
+                                        <p class="footer__socials-text">скажите нам, что-то хорошее</p>
+                                    </div>
+                                </div>
+                                <div class="footer__socials-col">
+                                    <div class="footer__socials-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                            viewBox="0 0 24 25" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M18.483 20.2902V20.2882L18.501 20.2452L21.5 5.12518V5.07718C21.5 4.70018 21.36 4.37118 21.058 4.17418C20.793 4.00118 20.488 3.98918 20.274 4.00518C20.0748 4.0232 19.8782 4.06345 19.688 4.12518C19.6069 4.15133 19.5268 4.18069 19.448 4.21318L19.435 4.21818L2.715 10.7772L2.71 10.7792C2.65917 10.7965 2.60941 10.8169 2.561 10.8402C2.44209 10.8936 2.328 10.9572 2.22 11.0302C2.005 11.1782 1.596 11.5262 1.665 12.0782C1.722 12.5362 2.037 12.8262 2.25 12.9772C2.37573 13.0653 2.5109 13.1391 2.653 13.1972L2.685 13.2112L2.695 13.2142L2.702 13.2172L5.628 14.2022C5.618 14.3852 5.636 14.5722 5.685 14.7572L7.15 20.3162C7.23003 20.6192 7.40297 20.8895 7.64452 21.0892C7.88608 21.2889 8.18412 21.4079 8.49678 21.4296C8.80944 21.4512 9.12102 21.3743 9.38777 21.2098C9.65451 21.0453 9.86302 20.8013 9.984 20.5122L12.272 18.0662L16.201 21.0782L16.257 21.1022C16.614 21.2582 16.947 21.3072 17.252 21.2662C17.557 21.2242 17.799 21.0962 17.981 20.9512C18.1915 20.7805 18.3593 20.5631 18.471 20.3162L18.479 20.2992L18.482 20.2932L18.483 20.2902ZM7.135 14.3752C7.11878 14.3135 7.12263 14.2483 7.14601 14.1889C7.16939 14.1296 7.21107 14.0792 7.265 14.0452L17.186 7.74518C17.186 7.74518 17.77 7.39018 17.749 7.74518C17.749 7.74518 17.853 7.80718 17.54 8.09818C17.244 8.37518 10.469 14.9162 9.783 15.5782C9.74486 15.6152 9.71814 15.6624 9.706 15.7142L8.6 19.9342L7.135 14.3742V14.3752Z"
+                                                fill="#05203E" />
+                                        </svg>
+                                    </div>
+                                    <div class="footer__socials-content">
+                                        <a class="footer__socials-link" href="#">@Panda English School</a>
+                                        <p class="footer__socials-text">напишите нам, что-то хорошее</p>
+                                    </div>
+                                </div>
+                                <div class="footer__socials-col">
+                                    <div class="footer__socials-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                            viewBox="0 0 24 25" fill="none">
+                                            <path
+                                                d="M2 7.5L10.1649 13.2154C10.8261 13.6783 11.1567 13.9097 11.5163 13.9993C11.8339 14.0785 12.1661 14.0785 12.4837 13.9993C12.8433 13.9097 13.1739 13.6783 13.8351 13.2154L22 7.5M6.8 20.5H17.2C18.8802 20.5 19.7202 20.5 20.362 20.173C20.9265 19.8854 21.3854 19.4265 21.673 18.862C22 18.2202 22 17.3802 22 15.7V9.3C22 7.61984 22 6.77976 21.673 6.13803C21.3854 5.57354 20.9265 5.1146 20.362 4.82698C19.7202 4.5 18.8802 4.5 17.2 4.5H6.8C5.11984 4.5 4.27976 4.5 3.63803 4.82698C3.07354 5.1146 2.6146 5.57354 2.32698 6.13803C2 6.77976 2 7.61984 2 9.3V15.7C2 17.3802 2 18.2202 2.32698 18.862C2.6146 19.4265 3.07354 19.8854 3.63803 20.173C4.27976 20.5 5.11984 20.5 6.8 20.5Z"
+                                                stroke="#05203E" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="footer__socials-content">
+                                        <a class="footer__socials-link" href="#">info@panda-school.by</a>
+                                        <p class="footer__socials-text">еще напишите нам, что-то хорошее</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__col">
+                                <div class="socials">
+                                    <a href="#" class="socials__link">
+                                        <img src="Images/Icons socials/vk 1.svg"
+                                            alt="Логотип социальной сети Вконтакте">
+                                    </a>
+                                    <a href="#" class="socials__link">
+                                        <img src="Images/Icons socials/inst 1.svg"
+                                            alt="Логотип социальной сети Инстаграмм">
+                                    </a>
+                                    <a href="#" class="socials__link">
+                                        <img src="Images/Icons socials/fb 1.svg" alt="Логотип социальной сети Фейсбук">
+                                    </a>
+                                    <div class="footer__staff-button">
+                                        <a href="#body" class="footer__staff-button-arrow">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.66699 14H23.3337M23.3337 14L16.3337 7M23.3337 14L16.3337 21"
+                                                    stroke="#0296E5" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer__row">
+                        <div class="footer__nav">
+                            <div class="footer__nav-links">
+                                <div class="footer__nav-col">
+                                    <button class="footer__nav-title">
+                                        <p class="footer__nav-text">О школе</p>
+                                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 10L6 14L10 10" stroke="#05203E" stroke-opacity="0.88"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <ul class="footer__nav-list">
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">О нашей школе</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Партнерам</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Вопрос-ответ</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Блог</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer__nav-col">
+                                    <button class="footer__nav-title">
+                                        <p class="footer__nav-text">Наши услуги</p>
+                                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 10L6 14L10 10" stroke="#05203E" stroke-opacity="0.88"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <ul class="footer__nav-list">
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Взрослым</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Детям и Подросткам</a>
+                                        </li>
+                                        <li class="footer__nav-item">
+                                            <a href="#" class="footer__nav-link">Компаниям</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer__nav-col">
+                                    <a href="#" class="footer__nav-link footer__nav-link--camp">Летний
+                                        лагерь
+                                    </a>
+                                </div>
+                                <div class="footer__nav-col">
+                                    <button class="footer__nav-title">
+                                        <p class="footer__nav-text">Документы</p>
+                                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 10L6 14L10 10" stroke="#05203E" stroke-opacity="0.88"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <div class="footer__nav-list">
+                                        <ul>
+                                            <li class="footer__staff-info">
+                                                <p>ООО «Успешное Будущее»</p>
+                                                <a href="#">Политика,</a>
+                                                <a href="#">Положение,</a>
+                                                <a href="#">Договор</a>
+                                            </li>
+                                            <li class="footer__staff-info">
+                                                <p>ООО «Панда Инглиш Скул»</p>
+                                                <a href="#">Политика,</a>
+                                                <a href="#">Положение,</a>
+                                                <a href="#">Договор</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__row">
+                        <div class="footer__images">
+                            <div class="footer__images-qrs">
+                                <div class="footer__images-qr">
+                                    <a href="#">
+                                        <img src="Images/Footer/apple-store.svg" alt="логотип app store">
+                                    </a>
+                                </div>
+                                <div class="footer__images-qr">
+                                    <a href="#">
+                                        <img src="Images/Footer/google-play.svg" alt="Логотип google play">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="footer__images-img">
+                                <div class="footer__images-img">
+                                    <img src="Images/Footer/panda__img.jpg" alt="Рисунок панды">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__row">
+                        <div class="footer__logos">
+                            <img src="Images/Logos/Authorised-Centre_CMYK 1.svg"
+                                alt="Логотип компании Cambridge English">
+                            <img src="Images/Logos/ets.svg" alt="Логотип компании ETS Global">
+                            <img src="Images/Logos/Associane school.svg" alt="Логотип компании Quality English">
+                        </div>
+                    </div>
+                    <div class="footer__row">
+                        <div class="footer__copyright">
+                            <div class="footer__copyright-logo">
+                                <a href="#"><img src="Images/Logos/Logo-main.svg"
+                                        alt="Логотип компании Panda English School"></a>
+                            </div>
+                            <div class="footer__copyright-info">
+                                <div class="footer__copyright-year">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9 1.6875C7.55373 1.6875 6.13993 2.11637 4.9374 2.91988C3.73486 3.72339 2.7976 4.86544 2.24413 6.20163C1.69067 7.53781 1.54586 9.00811 1.82801 10.4266C2.11017 11.8451 2.80661 13.148 3.82928 14.1707C4.85196 15.1934 6.15492 15.8898 7.57341 16.172C8.99189 16.4541 10.4622 16.3093 11.7984 15.7559C13.1346 15.2024 14.2766 14.2651 15.0801 13.0626C15.8836 11.8601 16.3125 10.4463 16.3125 9C16.3105 7.06123 15.5394 5.20246 14.1685 3.83154C12.7975 2.46063 10.9388 1.68955 9 1.6875ZM9 15.1875C7.77623 15.1875 6.57994 14.8246 5.56241 14.1447C4.54488 13.4648 3.75182 12.4985 3.2835 11.3679C2.81518 10.2372 2.69265 8.99314 2.93139 7.79288C3.17014 6.59262 3.75944 5.49011 4.62478 4.62478C5.49012 3.75944 6.59262 3.17014 7.79288 2.93139C8.99314 2.69264 10.2372 2.81518 11.3679 3.2835C12.4985 3.75181 13.4648 4.54488 14.1447 5.56241C14.8246 6.57994 15.1875 7.77623 15.1875 9C15.1856 10.6405 14.5331 12.2132 13.3732 13.3732C12.2132 14.5331 10.6405 15.1856 9 15.1875ZM6.75 9C6.75 9.47224 6.89859 9.9325 7.17471 10.3156C7.45083 10.6987 7.84049 10.9852 8.28849 11.1345C8.73649 11.2839 9.22013 11.2885 9.67088 11.1477C10.1216 11.0069 10.5167 10.7278 10.8 10.35C10.8896 10.2307 11.023 10.1518 11.1707 10.1308C11.3185 10.1097 11.4685 10.1482 11.5879 10.2379C11.7072 10.3275 11.7861 10.4608 11.8071 10.6086C11.8281 10.7563 11.7896 10.9064 11.7 11.0257C11.2749 11.5922 10.6823 12.0106 10.0062 12.2217C9.33011 12.4327 8.60475 12.4257 7.93285 12.2017C7.26094 11.9776 6.67656 11.5478 6.26246 10.9732C5.84836 10.3986 5.62553 9.70828 5.62553 9C5.62553 8.29172 5.84836 7.60139 6.26246 7.02678C6.67656 6.45217 7.26094 6.0224 7.93285 5.79833C8.60475 5.57427 9.33011 5.56727 10.0062 5.77832C10.6823 5.98937 11.2749 6.40778 11.7 6.9743C11.7444 7.03339 11.7767 7.10065 11.795 7.17222C11.8134 7.2438 11.8175 7.31829 11.8071 7.39145C11.7967 7.46461 11.772 7.535 11.7343 7.5986C11.6967 7.66221 11.6469 7.71778 11.5879 7.76215C11.5288 7.80652 11.4615 7.83881 11.3899 7.85718C11.3184 7.87556 11.2439 7.87966 11.1707 7.86924C11.0975 7.85883 11.0272 7.83411 10.9635 7.79649C10.8999 7.75887 10.8444 7.7091 10.8 7.65C10.5167 7.27221 10.1216 6.99315 9.67088 6.85234C9.22013 6.71154 8.73649 6.71613 8.28849 6.86546C7.84049 7.0148 7.45083 7.3013 7.17471 7.6844C6.89859 8.0675 6.75 8.52776 6.75 9Z"
+                                            fill="#05203E" />
+                                    </svg>
+                                    <p>Copyright 2023</p>
+                                </div>
+                                <p>LLC Panda English School</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
 
 
 
 
+    <script src="js/swiper-bundle.js"></script>
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>
