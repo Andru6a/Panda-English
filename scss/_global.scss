@@ -4,7 +4,6 @@ body {
     line-height: 1.08;
     color: $text-primary;
     background: $bg-white;
-    // overflow: hidden;
 }
 
 
@@ -148,5 +147,29 @@ body {
     transform: rotate(-45deg);
 }
 
+
+
+
+.link-arrow {
+    color: $text-accent4;
+    opacity: 1;
+    transition: $transition;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+
+    & img {
+        margin-left: 4px;
+        transition: $transition;
+    }
+
+    &:hover {
+        opacity: .72;
+
+        & img {
+            margin-left: 8px;
+        }
+    }
+}
 
 

@@ -117,8 +117,8 @@
     const navTitleFooter = document.querySelectorAll('.footer__mobile .footer__nav-title')
     const navItemFooter = document.querySelector('.footer__mobile .footer__nav-list');
     navTitleFooter.forEach((e) => {
-        if (document.documentElement.clientWidth > 800) return
         e.addEventListener('click', () => {
+            if (document.documentElement.clientWidth > 800) return
             const navToggle = e.nextElementSibling
             if (navToggle.classList.contains('footer__nav-list--opened')) {
                 navToggle.classList.remove('footer__nav-list--opened');
@@ -132,35 +132,48 @@
         });
     })
 
-    // import Swiper from '../types/modules/effect-cards',
-    // import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
 
+
+    // Swiper Who
+
+    let menu = ['Детей и Подростков', 'Взрослых', 'Компаний'];
     new Swiper('.who__slider', {
-        FreeMode: true,
+        direction: 'vertical',
+        effect: 'cards',
+        cardsEffect: {
+            perSlideRotate: 0,
+            perSlideOffset: 10,
+            slideShadows: false,
+        },
 
         pagination: {
-            type: 'custom',
-            clickable: true,
             el: '.who__pagination',
             bulletClass: 'who__pag',
             bulletActiveClass: 'who__pag--active',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (menu[index]) + '</span>';
+            },
         },
 
-        // // If we need pagination
-        // pagination: {
-        //     el: '.swiper-pagination',
-        // },
+        breakpoints: {
+            901: {
+            },
+        }
+    });
 
-        // // Navigation arrows
-        // navigation: {
-        //     nextEl: '.swiper-button-next',
-        //     prevEl: '.swiper-button-prev',
-        // },
 
-        // // And if we need scrollbar
-        // scrollbar: {
-        //     el: '.swiper-scrollbar',
-        // },
+    // Swiper Who--mobile
+
+    new Swiper('.who__slider--mobile', {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        breakpoints: {
+            601: {
+                // slidesPerView: 1,
+
+            },
+        }
     });
 
 })()
