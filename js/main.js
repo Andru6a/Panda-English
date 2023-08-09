@@ -46,11 +46,16 @@
 
 
     // Замена текста в Hero button
-    let textButton = document.getElementById('button-change')
-    if (document.documentElement.clientWidth < 600) {
-        console.log(textButton)
-        textButton.innerHTML = 'Оставить заявку'
+    document.addEventListener('scroll', changeButton)
+    function changeButton() {
+        const textButton = document.getElementById('button-change')
+        if (document.documentElement.clientWidth > 600) { textButton.innerHTML = 'Записаться на занятия' }
+        else textButton.innerHTML = 'Оставить заявку'
     }
+
+
+
+
 
 
 
@@ -155,23 +160,23 @@
                 return '<span class="' + className + '">' + (menu[index]) + '</span>';
             },
         },
-
-        breakpoints: {
-            901: {
-            },
-        }
     });
 
 
     // Swiper Who--mobile
 
     new Swiper('.who__slider--mobile', {
-        slidesPerView: 2,
-        spaceBetween: 10,
+        slidesPerView: 1.05,
+        spaceBetween: 11,
         breakpoints: {
-            601: {
-                // slidesPerView: 1,
-
+            450: {
+                slidesPerView: 1.4,
+            },
+            480: {
+                slidesPerView: 1.4,
+            },
+            701: {
+                slidesPerView: 2.2,
             },
         }
     });

@@ -17,13 +17,6 @@
 
 .who__slider--mobile {
     overflow: visible;
-    width: 600px;
-    height: 404px;
-}
-
-.who__slide {
-    width: 280px;
-    height: 404px;
 }
 
 .who {
@@ -48,6 +41,10 @@
         & span {
             color: $text-primary;
         }
+    }
+
+    .swiper-pagination-vertical.swiper-pagination-bullets.who__pagination {
+        transform: none;
     }
 
     &__pagination {
@@ -190,25 +187,7 @@
     }
 }
 
-.swiper-pagination-vertical.swiper-pagination-bullets.who__pagination {
-    transform: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*==================Who==============================*/
 
 
 
@@ -307,7 +286,20 @@
 
 }
 
+// who slider mobile active
 @media (max-width: 900px) {
+    // ==============Link-arrow button================================
+
+    .link-arrow {
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -0.014px;
+
+        & img {
+            width: 18px;
+            height: 18px;
+        }
+    }
 
     // ==============Header================================
 
@@ -491,74 +483,60 @@
         display: none;
     }
 
-    .who__inner {
-        flex-direction: column;
-        justify-content: start;
-    }
-
+    // ==============Who mobile================================
     .swiper.who__slider {
         margin-left: 0;
     }
 
-    .who__pagination {
-        display: none;
-    }
-    .who__title {
-        font-size: 42px;
-    }
+    .who {
 
-    // ==============Who mobile================================
-    .who__slide {
-        padding: 20px 16px;
-        border-radius: 24px;
-    }
-
-    .who__slide-title {
-        font-size: 20px;
-        margin-bottom: 16px;
-
-        font-weight: 900;
-        line-height: 1.18;
-    }
-
-    .who__slide-content {
-        font-size: 16px;
-    }
-
-    .who__slide-subtitle {
-        margin-bottom: 2px;
-    }
-
-    .who__slide-list {
-        padding: 2px 8px 12px 0px;
-    }
-
-    .who__slide-item {
-
-        padding: 12px 0 0 0;
-
-        & img {
-            gap: 12px;
-            width: 24px;
-            height: 24px;
+        &__pagination {
+            display: none;
         }
-    }
 
-    .link-arrow {
-        font-size: 14px;
-        line-height: 1.28;
-        letter-spacing: -0.014px;
-
-        & img {
-            width: 18px;
-            height: 18px;
+        &__title {
+            font-size: 42px;
         }
-    }
 
-    
+        &__slide {
+            padding: 20px 16px;
+            border-radius: 24px;
 
-    .who__text {
-        font-size: 42px;
+            &-title {
+                font-size: 20px;
+                margin-bottom: 16px;
+
+                font-weight: 900;
+                line-height: 1.18;
+            }
+
+            &-content {
+                font-size: 16px;
+            }
+
+            &-subtitle {
+                margin-bottom: 2px;
+            }
+
+            &-list {
+                padding: 2px 8px 12px 0px;
+            }
+
+            &-item {
+                gap: 12px;
+                padding: 12px 0 0 0;
+
+                & img {
+                    gap: 12px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        &__text {
+            font-size: 42px;
+        }
     }
 
 
@@ -765,8 +743,17 @@
 
 
 }
-
+// Уменьшение текста и падингов
 @media (max-width:600px) {
+    // ==============Global================================
+    .header__hero{
+        padding: 36px 0px 40px 0px;
+    }
+    .main__who{
+        padding-bottom: 40px;
+    }
+
+
     // ==============Hero================================
 
     .hero {
@@ -822,22 +809,17 @@
 
 
     // ==============Who mobile================================
-    .who__inner {
-        display: block;
-    }
-    .who__title {
-        font-size: 32px;
+    .who {
+        &__title {
+            font-size: 32px;
+        }
+
+        &__text {
+            font-size: 32px;
+        }
     }
 
-    .who__text {
-        font-size: 32px;
-    }
 
-    .who__slider--mobile {
-        overflow: visible;
-        width: 560px;
-        height: 404px;
-    }
 }
 
 @media (max-width:400px) {
@@ -848,8 +830,6 @@
             font-size: 38px;
         }
     }
-
-    .button {}
 
     // ==============Footer================================
 
