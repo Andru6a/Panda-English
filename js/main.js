@@ -46,11 +46,23 @@
 
 
     // Замена текста в Hero button
+    
     document.addEventListener('scroll', changeButton)
+
     function changeButton() {
-        const textButton = document.getElementById('button-change')
-        if (document.documentElement.clientWidth > 600) { textButton.innerHTML = 'Записаться на занятия' }
-        else textButton.innerHTML = 'Оставить заявку'
+        const allButton = document.querySelectorAll('.button')
+        if (document.documentElement.clientWidth > 600) {
+            allButton.forEach(e => {
+                if (e.innerHTML = 'Записаться на занятия') return
+                else e.innerHTML = 'Записаться на занятия'
+            })
+        }
+        else {
+            allButton.forEach(e => {
+                if (e.innerHTML = 'Оставить заявку') return
+                else e.innerHTML = 'Оставить заявку'
+            })
+        }
     }
 
 
@@ -145,6 +157,7 @@
     new Swiper('.who__slider', {
         direction: 'vertical',
         effect: 'cards',
+        grabCursor: true,
         cardsEffect: {
             perSlideRotate: 0,
             perSlideOffset: 10,
@@ -180,6 +193,26 @@
             },
         }
     });
+
+
+
+    // Swiper Why
+
+    new Swiper('.why__slider', {
+        effect: 'cards',
+        direction: 'vertical',
+        grabCursor: true,
+        cardsEffect: {
+            slideShadows: false,
+            perSlideOffset: 10,
+        },
+        navigation: {
+            nextEl: '.why__next',
+            prevEl: '.why__prev',
+        },
+
+    });
+
 
 })()
 

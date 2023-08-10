@@ -49,7 +49,7 @@ body {
 .wrapper {
     min-height: 100%;
     width: 100%;
-    // overflow: hidden;перенес в контейнер
+    // overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -67,8 +67,11 @@ body {
 
     &__header {
         overflow: visible;
-        display: flex;
+        display: flex
+    }
 
+    &__why {
+        overflow: visible;
     }
 }
 
@@ -107,11 +110,27 @@ body {
     }
 }
 
+.title52 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.title70 {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.08;
+}
+
 .header__hero {
     padding: 56px 0 90px;
 }
 
 .main__who {
+    padding-bottom: 90px;
+}
+
+.main__why {
     padding-bottom: 90px;
 }
 
