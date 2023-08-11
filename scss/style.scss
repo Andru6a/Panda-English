@@ -12,6 +12,7 @@
 
 
 /*==================Who==============================*/
+
 .who__slider--mobile.swiper {
     display: none;
 }
@@ -267,16 +268,6 @@
         }
     }
 
-    // &::after {
-    //     // content: url('../Images/Decor/paw.svg');
-    //     // position: absolute;
-    //     // display: block;
-    //     // top: 10%;
-    //     left: 10%;
-    //     // width: 147px;
-    //     // height: 147px;
-    //     // background: url('../Images/Decor/paw.svg') 0 0 no-repeat;
-    // }
 
     &__inner {
         overflow: visible;
@@ -390,61 +381,16 @@
         }
     }
 
-    &__prev,
-    &__next {
-        background: $bg-grey;
-        border-radius: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: $transition;
 
-        &-button {
-            background: transparent;
-            width: 56px;
-            height: 56px;
 
-            & svg {
-                transition: $transition;
-            }
 
-            &:hover {
-                & svg {
-                    scale: 1.2;
-                }
-            }
-        }
-    }
 
-    .swiper-button-disabled {
-        opacity: 0.24;
-        backdrop-filter: blur(6px);
-    }
-
-    .swiper-button-disabled .why__prev-button,
-    .swiper-button-disabled .why__next-button {
-        cursor: default;
-
-        &:hover {
-            & svg {
-                scale: 1;
-            }
-        }
-    }
 
     &__prev {
         margin-bottom: 16px;
-
-        &-button {}
     }
 
-    &__next {
-        & svg {
-            rotate: 180deg;
-        }
-
-        &-button {}
-    }
+    &__next {}
 
     // ===================Second==============
     &__second {
@@ -479,9 +425,306 @@
         &-imgbox {}
     }
 
+}
+
+/*==================Skills==============================*/
+
+.skills {
+
+    &__inner {}
+
+    &__title {
+        margin-bottom: 50px;
+
+        & span {
+            color: $text-accent1;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__textblock {
+
+        &-items {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        &-item {
+            display: flex;
+        }
+
+        &-img1 {
+            margin-right: 9px;
+        }
+
+        &-img2 {
+            margin-right: -24px;
+        }
+
+
+        &-content {
+            max-width: 367px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        &-title {
+            color: $text-accent1;
+            font-weight: 700;
+            line-height: 1.18;
+        }
+
+        &-text {
+
+            line-height: 1.22;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+
+    .swiper-pagination-vertical.swiper-pagination-bullets {
+        transform: none;
+    }
+
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $bg-grey;
+        opacity: 0.24;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+    }
+
+    &__pagination {}
+
+    &__slider-box {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__slider {
+        width: 515px;
+        height: 420px;
+    }
+
+    &__slider-wrapper {}
+
+    &__slide {
+        &-inner {}
+
+        &-student {
+            display: flex;
+            align-items: center;
+
+        }
+
+        &-img {
+            margin-right: 20px;
+        }
+
+        &-name,
+        &-about {
+            max-width: 285px;
+            font-size: 28px;
+            line-height: 1.22;
+            opacity: 0.72;
+        }
+
+
+
+        &-text {
+            max-width: 485px;
+            font-size: 28px;
+            line-height: 1.34;
+        }
+    }
+
+}
+
+/*==================Numbers==============================*/
+
+.numbers {
+
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1045px;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        background: url("../Images/Decor/paw2.svg") 90% 14% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 60% 9% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 38% 32% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+            url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat;
+        animation: paw2 10s infinite;
+    }
+
+    @keyframes paw2 {
+        0% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        11% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        22% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        33% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        44% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        55% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        66% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+
+        77% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 147px 147px no-repeat
+        }
+
+        88% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 147px 147px no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 147px 147px no-repeat
+        }
+
+        100% {
+            background: url("../Images/Decor/paw2.svg") 90% 14% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 60% 9% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 38% 32% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 67% 50% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 15% 54% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 50% 76% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 20% 100% / 0 0 no-repeat
+        }
+    }
+
+    &__inner {}
+
+    &__items {
+        margin: 0 auto;
+        max-width: 685px;
+    }
+
+    &__item {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        & &:nth-child(1) {}
+
+        &:nth-child(2) {
+            align-items: end;
+        }
+
+        &:nth-child(3) {}
+
+        &:nth-child(4) {
+            align-items: end;
+            margin-bottom: 0px;
+        }
+
+        &-number {
+            font-size: 88px;
+            font-weight: 700;
+            line-height: .96;
+            color: $text-accent1;
+            margin-bottom: 14px;
+        }
+
+        &-text {
+            font-size: 28px;
+            line-height: 1.22;
+        }
+    }
 
 
 }
+
+/*==================Numbers==============================*/
+
 
 
 
@@ -546,6 +789,7 @@
 
 }
 
+
 @media (max-width: 1200px) {
     // =============Footer======================
 
@@ -592,9 +836,34 @@
             }
         }
     }
+
+    // =============Skills======================
+
+    .skills {
+        &__textblock {
+            margin-bottom: 24px;
+
+            &-items {
+
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__content {
+            flex-wrap: wrap;
+        }
+
+        &__slider-box {
+            justify-content: start;
+            flex-direction: row-reverse;
+        }
+
+        &__slider.swiper {
+            margin: 0 0;
+        }
+    }
 }
-
-
 
 
 @media (max-width: 1050px) {
@@ -631,7 +900,10 @@
             left: 45%;
         }
     }
+
+
 }
+
 
 // who slider mobile active
 @media (max-width: 900px) {
@@ -975,7 +1247,126 @@
             }
         }
     }
+
+    // ==============Skills================================
+
+    .skills {
+        &__slider-box {
+            flex-direction: column-reverse;
+            border: solid 1px $bg-grey;
+            border-radius: 16px;
+            gap: 8px;
+            max-width: 530px;
+            padding: 20px 16px;
+        }
+
+        &__navigation {
+            flex-direction: row;
+            gap: 8px;
+            margin: 0 20px 20px auto;
+        }
+
+        &__pagination {
+            display: flex;
+        }
+
+        &__slider.swiper {
+            // margin: 0 auto 0 auto;
+        }
+
+
+
+        // ==============nav================================
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+        }
+
+        .prev__swiper,
+        .next__swiper {
+            width: 32px;
+            height: 32px;
+            transform: rotate(-90deg);
+
+            &-button {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            & svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            width: auto;
+        }
+    }
+
+
+    // ==============Numbers================================
+
+    .numbers {
+        &::before {
+            height: 350px;
+            top: 31%;
+            background: url("../Images/Decor/paw2.svg") 79% 15% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 55% 74% / 0 0 no-repeat,
+                url("../Images/Decor/paw2.svg") 27% 45% / 0 0 no-repeat;
+            animation: paw2 5s infinite;
+        }
+
+        @keyframes paw2 {
+            0% {
+                background: url("../Images/Decor/paw2.svg") 79% 15% / 0 0 no-repeat,
+                    url("../Images/Decor/paw2.svg") 55% 74% / 0 0 no-repeat,
+                    url("../Images/Decor/paw2.svg") 27% 45% / 0 0 no-repeat;
+            }
+
+            27% {
+                background: url("../Images/Decor/paw2.svg") 79% 15% / 94px 94px no-repeat,
+                    url("../Images/Decor/paw2.svg") 55% 74% / 0 0 no-repeat,
+                    url("../Images/Decor/paw2.svg") 27% 45% / 0 0 no-repeat;
+            }
+
+            54% {
+                background: url("../Images/Decor/paw2.svg") 79% 15% / 94px 94px no-repeat,
+                    url("../Images/Decor/paw2.svg") 55% 74% / 94px 94px no-repeat,
+                    url("../Images/Decor/paw2.svg") 27% 45% / 0 0 no-repeat;
+            }
+
+            71% {
+                background: url("../Images/Decor/paw2.svg") 79% 15% / 94px 94px no-repeat,
+                    url("../Images/Decor/paw2.svg") 55% 74% / 94px 94px no-repeat,
+                    url("../Images/Decor/paw2.svg") 27% 45% / 94px 94px no-repeat;
+            }
+
+            100% {
+                background: url("../Images/Decor/paw2.svg") 79% 15% / 0 0 no-repeat,
+                    url("../Images/Decor/paw2.svg") 55% 74% / 0 0 no-repeat,
+                    url("../Images/Decor/paw2.svg") 27% 45% / 0 0 no-repeat;
+            }
+        }
+
+        &__item {
+
+            &-number {
+                font-size: 64px;
+                line-height: .98;
+            }
+
+            &-text {
+                font-size: 20px;
+                margin-right: 0;
+            }
+        }
+    }
 }
+
 
 // Footer меняется на mobile
 @media (max-width:800px) {
@@ -1196,6 +1587,7 @@
 
 }
 
+
 // Уменьшение текста и падингов
 @media (max-width:600px) {
 
@@ -1206,6 +1598,15 @@
 
     .main__who {
         padding-bottom: 40px;
+    }
+
+    .main__why {
+        padding-bottom: 30px;
+    }
+
+    .main__numbers {
+        padding: 40px 0 50px 0;
+
     }
 
     .title52 {
@@ -1272,8 +1673,6 @@
     }
 
 
-    // ==============Who mobile================================
-
 
     // ==============Why================================
 
@@ -1296,6 +1695,8 @@
         }
 
         &__second {
+            padding: 40px 0 30px;
+
             &-text {
                 font-size: 16px;
             }
@@ -1311,9 +1712,102 @@
             }
         }
     }
+
+    // ==============Skills================================
+
+    .skills {
+        &__title {
+            margin-bottom: 24px;
+        }
+
+        &__textblock {
+
+            &-items {
+                gap: 24px;
+            }
+
+            &-item {
+                flex-direction: column;
+            }
+
+            & img {
+                width: 100px;
+                height: 50px;
+            }
+
+            &-content {
+                font-size: 16px;
+            }
+
+            &-title {
+                line-height: normal;
+            }
+        }
+
+
+        &__slider {
+            width: 256px;
+            height: 200px;
+
+            &-box {
+                max-width: 280px;
+            }
+        }
+
+        &__slide {
+            &-img {
+                margin-right: 10px;
+
+                & img {
+                    width: 80px;
+                    height: 85px;
+                }
+            }
+
+            &-name,
+            &-about {
+                font-size: 16px;
+            }
+
+            &-text {
+                font-size: 14px;
+                line-height: 1.28;
+                letter-spacing: -0.014px;
+            }
+        }
+    }
+
+    // ==============Numbers================================
+
+    .numbers {
+        &::before {
+            top: 10%;
+        }
+
+        &__items {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        &__item {
+            display: block;
+
+            &:nth-child(3) {
+                order: 4;
+            }
+
+            &-number {
+                font-size: 42px;
+                line-height: .98;
+            }
+
+            &-text {
+                font-size: 16px;
+            }
+        }
+    }
+
 }
-
-
 
 
 @media (max-width:400px) {
@@ -1335,4 +1829,13 @@
             }
         }
     }
+
+    // ==============Numbers================================
+
+    .numbers {
+        &__item-text {
+            max-width: 105px;
+        }
+    }
+
 }

@@ -69,8 +69,7 @@ body {
         overflow: visible;
         display: flex
     }
-
-    &__why {
+    &__numbers{
         overflow: visible;
     }
 }
@@ -134,12 +133,42 @@ body {
     padding-bottom: 90px;
 }
 
+.main__skills {
+    padding-bottom: 0px;
+}
+
+.main__numbers {
+    padding: 255px 0 190px 0;
+
+}
+
 .footer {
     padding: 100px 0 0;
 }
 
 .footer__mobile {
     padding: 40px 0 16px 0px;
+}
+
+.link-arrow {
+    color: $text-accent4;
+    opacity: 1;
+    transition: $transition;
+    position: relative;
+    font-size: 20px;
+
+    & img {
+        margin-left: 4px;
+        transition: $transition;
+    }
+
+    &:hover {
+        opacity: .72;
+
+        & img {
+            margin-left: 8px;
+        }
+    }
 }
 
 // =================NAV OPEN ===============
@@ -169,23 +198,53 @@ body {
 
 
 
-.link-arrow {
-    color: $text-accent4;
-    opacity: 1;
-    transition: $transition;
-    position: relative;
-    font-size: 20px;
+// =================Swiper nav ===============
 
-    & img {
-        margin-left: 4px;
-        transition: $transition;
+.prev__swiper,
+.next__swiper {
+    background: $bg-grey;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+
+    &-button {
+        background: transparent;
+        width: 56px;
+        height: 56px;
+
+        & svg {
+            transition: $transition;
+        }
+
+        &:hover {
+            & svg {
+                scale: 1.2;
+            }
+        }
     }
+}
+
+
+.next__swiper {
+    & svg {
+        rotate: 180deg;
+    }
+}
+
+.swiper-button-disabled {
+    opacity: 0.24;
+    backdrop-filter: blur(6px);
+}
+
+.swiper-button-disabled .prev__swiper-button,
+.swiper-button-disabled .next__swiper-button {
+    cursor: default;
 
     &:hover {
-        opacity: .72;
-
-        & img {
-            margin-left: 8px;
+        & svg {
+            scale: 1;
         }
     }
 }

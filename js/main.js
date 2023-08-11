@@ -46,7 +46,7 @@
 
 
     // Замена текста в Hero button
-    
+
     document.addEventListener('scroll', changeButton)
 
     function changeButton() {
@@ -210,7 +210,29 @@
             nextEl: '.why__next',
             prevEl: '.why__prev',
         },
+    });
 
+
+    // Swiper Skills
+
+
+    new Swiper('.skills__slider', {
+        direction: 'horizontal',
+        navigation: {
+            nextEl: '.skills__next',
+            prevEl: '.skills__prev',
+        },
+
+        pagination: {
+            el: '.skills__pagination',
+        },
+
+
+        breakpoints: {
+            901: {
+                direction: 'vertical',
+            },
+        },
     });
 
 
