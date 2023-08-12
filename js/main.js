@@ -67,11 +67,6 @@
 
 
 
-
-
-
-
-
     // Бургер 
 
     document.addEventListener('click', burgerInit)
@@ -108,7 +103,6 @@
 
 
     // Nav Header
-
 
     const navTitle = document.querySelectorAll('.nav__title');
     const navItem = document.querySelector('.nav__items-plus');
@@ -175,7 +169,6 @@
         },
     });
 
-
     // Swiper Who--mobile
 
     new Swiper('.who__slider--mobile', {
@@ -213,11 +206,11 @@
     });
 
 
+
     // Swiper Skills
 
-
     new Swiper('.skills__slider', {
-        direction: 'horizontal',
+        direction: 'vertical',
         navigation: {
             nextEl: '.skills__next',
             prevEl: '.skills__prev',
@@ -225,14 +218,62 @@
 
         pagination: {
             el: '.skills__pagination',
+            clickable: true,
         },
 
+    });
 
+    // Swiper Skills--mobile
+
+    new Swiper('.skills__slider--mobile', {
+        direction: 'horizontal',
+        navigation: {
+            nextEl: '.skills__next--mobile',
+            prevEl: '.skills__prev--mobile',
+        },
+
+        pagination: {
+            el: '.skills__pagination--mobile',
+            clickable: true,
+        },
+    });
+
+
+
+    // Swiper Nubmers
+
+    new Swiper('.bonus__slider', {
+        direction: 'vertical',
+        autoplay: true,
+        speed: 2000,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+    });
+
+    // Swiper Nubmers--mobile
+
+    new Swiper('.bonus__slider--mobile', {
+        slidesPerView: 3.2,
+        autoplay: true,
+        speed: 2000,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         breakpoints: {
-            901: {
-                direction: 'vertical',
+            600: {
+                slidesPerView: 2.75,
+                spaceBetween: -100,
             },
-        },
+            900: {
+                slidesPerView: 2.9,
+            },
+        }
+
     });
 
 

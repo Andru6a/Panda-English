@@ -69,7 +69,8 @@ body {
         overflow: visible;
         display: flex
     }
-    &__numbers{
+
+    &__numbers {
         overflow: visible;
     }
 }
@@ -140,6 +141,10 @@ body {
 .main__numbers {
     padding: 255px 0 190px 0;
 
+}
+
+.main__bonus {
+    padding: 30px 0px 0px 0px;
 }
 
 .footer {

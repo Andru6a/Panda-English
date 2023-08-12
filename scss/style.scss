@@ -276,7 +276,7 @@
         &::after {
             content: "";
             position: absolute;
-            top: 100%;
+            top: 99%;
             left: 0;
             width: 100%;
             height: 2px;
@@ -381,11 +381,6 @@
         }
     }
 
-
-
-
-
-
     &__prev {
         margin-bottom: 16px;
     }
@@ -428,6 +423,9 @@
 }
 
 /*==================Skills==============================*/
+.skills__slider-box--mobile {
+    display: none;
+}
 
 .skills {
 
@@ -723,7 +721,142 @@
 
 }
 
-/*==================Numbers==============================*/
+/*==================Bonus==============================*/
+
+
+.bonus {
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-bottom: 70px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 99%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-image: linear-gradient(to right, #D6DADE 33%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 5px 2px;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &__slider--mobile.swiper {
+        display: none;
+    }
+
+    &__slider {
+        border: 1px solid $bg-grey;
+        border-radius: 200px;
+        width: 400px;
+        height: 580px;
+    }
+
+    &__slider-inner {}
+
+    &__slide.swiper-slide {
+        display: flex;
+        align-items: center;
+    }
+
+    &__slide {
+
+        &-img {
+            transform: translateX(18%);
+        }
+    }
+
+    &__content {
+        max-width: 685px;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        &-img {
+            margin-right: 18px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__title {
+        animation: arrow-green 6s infinite;
+        animation-delay: 4s;
+        margin-right: 8px;
+    }
+
+    @keyframes arrow-green {
+        0% {
+            color: $text-primary;
+            margin-right: 8px;
+        }
+
+        20% {
+            color: $text-accent1;
+            margin-right: 0px;
+        }
+
+        40% {
+            color: $text-accent1;
+            margin-right: 0px;
+        }
+
+        60% {
+            color: $text-primary;
+            margin-right: 8px;
+        }
+
+        100% {
+            color: $text-primary;
+            margin-right: 8px;
+        }
+
+    }
+
+    &__text {
+        max-width: 675px;
+        font-size: 32px;
+        line-height: 1.4;
+        border-bottom: 1px $bg-grey;
+        padding: 8px 0px 32px 0px;
+        position: relative;
+
+        & img {
+            @include pos(73, 80);
+            width: 68px;
+            height: 68px;
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 99%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-image: linear-gradient(to right, #D6DADE 33%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 5px 2px;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &__anotation {
+        font-size: 20px;
+        line-height: 1.44;
+        margin-top: 32px;
+    }
+}
+
 
 
 
@@ -863,6 +996,51 @@
             margin: 0 0;
         }
     }
+
+    // =============Bonus======================
+
+    .bonus {
+        &__inner {
+            flex-direction: column-reverse;
+            align-items: start;
+        }
+
+        &__content {
+            max-width: none;
+        }
+
+        &__text {
+            border-bottom: 1px solid $bg-grey;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &__anotation {
+            max-width: 675px;
+        }
+
+        &__slider.swiper {
+            display: none;
+        }
+
+        &__slider--mobile.swiper {
+            display: block;
+            width: 100%;
+            height: 350px;
+
+        }
+
+        &__slide {
+            &-img {
+                width: 250px;
+                transform: translateX(0%);
+            }
+        }
+
+
+    }
 }
 
 
@@ -901,14 +1079,11 @@
         }
     }
 
-
 }
 
 
 // who slider mobile active
 @media (max-width: 900px) {
-
-
     // ==============Global================================
 
     .link-arrow {
@@ -1067,8 +1242,6 @@
         display: flex;
     }
 
-
-
     // ==============Footer================================
     .footer {
         &__nav {
@@ -1160,6 +1333,8 @@
         }
     }
 
+
+
     // ==============Why================================
 
     .why {
@@ -1248,10 +1423,21 @@
         }
     }
 
+
+
     // ==============Skills================================
+    .skills__slider-box {
+        display: none;
+    }
+
+    // ==============Skills Mobile===
+    .skills__slider-box--mobile {
+        display: flex;
+        gap: 20px;
+    }
 
     .skills {
-        &__slider-box {
+        &__slider-box--mobile {
             flex-direction: column-reverse;
             border: solid 1px $bg-grey;
             border-radius: 16px;
@@ -1266,15 +1452,10 @@
             margin: 0 20px 20px auto;
         }
 
-        &__pagination {
-            display: flex;
+        &__slider--mobile {
+            width: 515px;
+            height: 420px;
         }
-
-        &__slider.swiper {
-            // margin: 0 auto 0 auto;
-        }
-
-
 
         // ==============nav================================
         .swiper-pagination-bullet {
@@ -1302,10 +1483,8 @@
             }
         }
 
-        .swiper-pagination-bullets.swiper-pagination-horizontal {
-            width: auto;
-        }
     }
+
 
 
     // ==============Numbers================================
@@ -1363,6 +1542,35 @@
                 font-size: 20px;
                 margin-right: 0;
             }
+        }
+    }
+
+    // ==============Bonus================================
+
+    .bonus {
+        &__slider--mobile.swiper {
+            height: 100px;
+        }
+
+        &__head {
+            & img {
+                display: none;
+            }
+        }
+
+        &__title {
+            animation: none;
+        }
+
+        &__content {
+            margin-bottom: 30px;
+        }
+
+        &__text,
+        &__anotation {
+            max-width: 400px;
+            font-size: 24px;
+            line-height: 1.22;
         }
     }
 }
@@ -1608,6 +1816,9 @@
         padding: 40px 0 50px 0;
 
     }
+    .bonus__inner{
+        padding-bottom: 30px;
+    }
 
     .title52 {
         font-size: 32px;
@@ -1745,13 +1956,13 @@
         }
 
 
-        &__slider {
+        &__slider--mobile {
             width: 256px;
             height: 200px;
+        }
 
-            &-box {
-                max-width: 280px;
-            }
+        &__slider-box--mobile {
+            max-width: 280px;
         }
 
         &__slide {
@@ -1803,6 +2014,31 @@
 
             &-text {
                 font-size: 16px;
+            }
+        }
+    }
+
+    // ==============Bnobus================================
+
+    .bonus {
+
+        &__text,
+        &__anotation {
+            max-width: 290px;
+            font-size: 16px;
+        }
+
+        &__text {
+            & img {
+                width: 34px;
+                height: 34px;
+            }
+        }
+
+        &__slide {
+            &-img {
+                width: 100px;
+                height: 60px;
             }
         }
     }
