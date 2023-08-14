@@ -903,15 +903,17 @@
         height: 650px;
         border-radius: 32px;
     }
-    &__slider.swiper{
+
+    &__slider.swiper {
         position: absolute;
         top: -30px;
         z-index: 0;
         scale: .95;
         transition: $transition;
         opacity: .2;
-        
+
     }
+
     .testimonials-video &__slider.swiper {
         top: 0;
         z-index: 5;
@@ -921,7 +923,6 @@
 
     &__slider-inner {}
 
-
     &__slide {
         &-video {
             width: 100%;
@@ -930,6 +931,25 @@
         }
     }
 
+    // ===========Slider Video Pagination==========
+
+    &__slider-pagination.swiper-pagination .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        height: 20px;
+        top: 16px;
+    }
+
+    &__slider-pagination .swiper-pagination-bullet {
+        width: 370px;
+        border-radius: 16px;
+        background: $text-primary;
+        opacity: .35;
+    }
+
+    &__slider-pagination .swiper-pagination-bullet-active {
+        // opacity: 1;
+        // background: $bg-white;
+    }
 
     // ===========Slider Photo==========
     &__slider2 {
@@ -957,7 +977,12 @@
 
     &__slider2-inner {}
 
-    &__slide2 {}
+    &__slide2 {
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 
     // ===========Slider Photo Navigation==========
     &__slider2-nav {
@@ -993,6 +1018,96 @@
         left: 90%;
     }
 }
+
+// Video controls slider
+.video {
+    &__controls {
+        display: flex;
+        flex-direction: row-reverse;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        z-index: 10;
+        opacity: .5;
+        transition: $transition;
+        background: rgba(117, 117, 117);
+        border-radius: 15px;
+        padding: 10px 10px;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &-volume {
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        &-play {
+            cursor: pointer;
+        }
+
+        input[type="range"] {
+            accent-color: $text-accent1;
+        }
+    }
+
+    &__progress {
+        position: absolute;
+        top: 22px;
+        display: flex;
+        width: 370px;
+        height: 8px;
+        transition: $transition;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+
+    &__progress1 {
+        left: 19.9%;
+    }
+
+    &__progress2 {
+        left: 50.4%;
+
+    }
+
+    &__progress-filled {
+        opacity: 1;
+        width: 0%;
+        border-radius: 16px;
+        background: $bg-white;
+    }
+
+    &__controls-play--active .play-button:first-child {
+        display: none;
+    }
+
+    &__controls-play--active .play-button:last-child {
+        display: block;
+    }
+}
+
+
+.play-button {
+    width: 50px;
+    height: 50px;
+
+    &:first-child {
+        display: block;
+    }
+
+    &:last-child {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
 
 
 

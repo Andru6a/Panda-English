@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/Logos/Logo.svg">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/swiper-bundle.css">
     <title>Panda English School</title>
@@ -935,25 +936,48 @@
                         </div>
                         <div class="testimonials__slider swiper">
                             <div class="testimonials__slider-inner swiper-wrapper">
-                                <div class="testimonials__slide swiper-slide">
-                                    <video class="testimonials__slide-video" src="Video/Replay 2023-07-12 22-34-37.mp4"
-                                        autoplay muted>
+                                <div id="video-slide1" class="testimonials__slide swiper-slide">
+                                    <video poster="Video/preview-school.png" id="testimonials__slide-video1" class="testimonials__slide-video"
+                                        src="Video/video-school.mp4">
                                     </video>
+                                    <div class="video__controls">
+                                        <input id="video__controls-volume1" class="video__controls-volume" type="range"
+                                            min="0" max="1" step="0.05" value="0.3">
+                                        <div id="video__controls-play1" class="video__controls-play" title="play">
+                                            <img class="play-button" src="Images/Icons/Video/play-button.svg" alt="">
+                                            <img class="play-button" src="Images/Icons/Video/pause-button.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="video-progress1" class="video__progress video__progress1">
+                                        <div class="video__progress-filled"></div>
+                                    </div>
                                 </div>
-                                <div class="testimonials__slide swiper-slide">
-                                    <video class="testimonials__slide-video" src="Video/Replay 2023-07-20 21-03-14.mp4"
-                                        autoplay muted>
+                                <div id="video-slide2" class="testimonials__slide swiper-slide">
+                                    <video poster="Video/preview-phys.png" id="testimonials__slide-video2" class="testimonials__slide-video"
+                                        src="Video/video-phys.mp4">
                                     </video>
+                                    <div class="video__controls">
+                                        <input id="video__controls-volume2" class="video__controls-volume" type="range"
+                                            min="0" max="1" step="0.05" value="0.3">
+                                        <div id="video__controls-play2" class="video__controls-play" title="play">
+                                            <img class="play-button" src="Images/Icons/Video/play-button.svg" alt="">
+                                            <img class="play-button" src="Images/Icons/Video/pause-button.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="video-progress2" class="video__progress video__progress2">
+                                        <div class="video__progress-filled"></div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="testimonials__slider-pagination swiper-pagination"></div>
                         </div>
                         <div class="testimonials__slider2 swiper">
                             <div class="testimonials__slider2-inner swiper-wrapper">
                                 <div class="testimonials__slide2 swiper-slide">
-                                    <img src="Images/Content/testimonials/photo-slider1.png" alt="">
+                                    <img src="Images/Content/testimonials/photo-slider1.jpg" alt="">
                                 </div>
                                 <div class="testimonials__slide2 swiper-slide">
-                                    <img src="Images/Content/testimonials/photo-slider1.png" alt="">
+                                    <img src="Images/Content/testimonials/photo-slider2.jpg" alt="">
                                 </div>
                             </div>
                             <div class="testimonials__slider2-nav">
@@ -982,7 +1006,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
         </main>
 
@@ -1413,3 +1436,13 @@
 </body>
 
 </html>
+
+
+
+<!-- <div class="video-player">
+    <video class="video" playsinline>
+        <source src="Video/Replay 2023-07-12 22-34-37.mp4" type="video/mp4">
+    </video>
+    <div class="play-button" title="play">>>></div>
+    <input class="volume" type="range" min="0" max="1" step="0.05" value="0">
+</div> -->

@@ -1,7 +1,7 @@
 (function () {
 
 
-    // Навигация
+    // =================Навигация==============================================================
 
     document.addEventListener('click', navLinks)
 
@@ -36,7 +36,7 @@
 
 
 
-    // Анимация текста HERO
+    // ====================Анимация текста HERO=======================================================
 
     let title = document.getElementById('title-change');
 
@@ -45,7 +45,7 @@
 
 
 
-    // Замена текста в Hero button
+    // =========================Замена текста в Hero button==========================================
 
     document.addEventListener('scroll', changeButton)
 
@@ -67,7 +67,7 @@
 
 
 
-    // Бургер 
+    // ==============================Бургер ====================================================
 
     document.addEventListener('click', burgerInit)
 
@@ -102,7 +102,7 @@
 
 
 
-    // Nav Header
+    // ==============================Nav Header==============================
 
     const navTitle = document.querySelectorAll('.nav__title');
     const navItem = document.querySelector('.nav__items-plus');
@@ -123,7 +123,7 @@
 
 
 
-    // Nav в Footer
+    //==============================Nav в Footer==============================
 
     const navTitleFooter = document.querySelectorAll('.footer__mobile .footer__nav-title')
     const navItemFooter = document.querySelector('.footer__mobile .footer__nav-list');
@@ -145,7 +145,7 @@
 
 
 
-    // Swiper Who
+    //============================== Swiper Who==============================
 
     let menu = ['Детей и Подростков', 'Взрослых', 'Компаний'];
     new Swiper('.who__slider', {
@@ -189,7 +189,7 @@
 
 
 
-    // Swiper Why
+    // ==============================Swiper Why==============================
 
     new Swiper('.why__slider', {
         effect: 'cards',
@@ -207,7 +207,7 @@
 
 
 
-    // Swiper Skills
+    // ==============================Swiper Skills==============================
 
     new Swiper('.skills__slider', {
         direction: 'vertical',
@@ -240,7 +240,7 @@
 
 
 
-    // Swiper Nubmers
+    // ==============================Swiper Nubmers==============================
 
     new Swiper('.bonus__slider', {
         direction: 'vertical',
@@ -278,11 +278,25 @@
 
 
 
-    // Swiper Testimonials
+    // ==============================Swiper Testimonials==============================
 
-    new Swiper('.testimonials__slider', {
+    videoSlider = new Swiper('.testimonials__slider', {
         spaceBetween: 0,
+        pagination: {
+            el: '.testimonials__slider-pagination',
+            clickable: true,
+        }
     });
+    // Пауза на видео
+    videoSlider.on('slideChange', function () {
+        video1.pause()
+        video2.pause()
+
+        playButton1.classList.remove('video__controls-play--active')
+        playButton2.classList.remove('video__controls-play--active')
+    })
+
+
 
     // Swiper Testimonials-2
 
@@ -299,27 +313,99 @@
     });
 
 
-    // Swiper-Toggle Testimonials
+
+    // ==============================Swiper-Toggle Testimonials==========+ пауза на видео====================
 
     const slideToogle = document.querySelector('.testimonials')
     document.addEventListener('click', changeSlider)
-    
+
     slideToogle.classList.add('testimonials-video')
     function changeSlider(e) {
         const videoButton = e.target.closest('.testimonials__button--video')
         const photoButton = e.target.closest('.testimonials__button--photo')
 
         if (!videoButton && !photoButton) return
-        if (videoButton){
+        if (videoButton) {
             slideToogle.classList.remove('testimonials-photo')
             slideToogle.classList.add('testimonials-video')
         }
-        if (photoButton){
+        if (photoButton) {
             slideToogle.classList.remove('testimonials-video')
             slideToogle.classList.add('testimonials-photo')
+
+            // Пауза на видео
+            video1.pause()
+            video2.pause()
+            playButton1.classList.remove('video__controls-play--active')
+            playButton2.classList.remove('video__controls-play--active')
+
         }
-        
+
     }
+
+
+
+    // ==============================Testimonials Video Controls !1==============================
+
+    const video1 = document.getElementById('testimonials__slide-video1')
+    const playButton1 = document.getElementById('video__controls-play1')
+
+    playButton1.addEventListener('click', (e) => {
+        if (video1.paused) {
+            video1.play()
+            playButton1.classList.add('video__controls-play--active')
+        } else {
+            video1.pause()
+            playButton1.classList.remove('video__controls-play--active')
+        }
+    })
+
+    const volume1 = document.getElementById('video__controls-volume1')
+    video1.volume = '0.3'
+    volume1.addEventListener('mousemove', (e) => {
+        video1.volume = e.target.value
+    })
+
+    const progress = document.getElementById('video-progress1')
+
+    video1.addEventListener('timeupdate', () => {
+        const progressBar = progress.querySelector('.video__progress-filled')
+        const percentage = (video1.currentTime / video1.duration) * 100
+        progressBar.style.width = `${percentage}%`
+    })
+
+    // ==============================Testimonials Video Controls !2==============================
+
+    const video2 = document.getElementById('testimonials__slide-video2')
+    const playButton2 = document.getElementById('video__controls-play2')
+
+    playButton2.addEventListener('click', (e) => {
+        if (video2.paused) {
+            video2.play()
+            playButton2.classList.add('video__controls-play--active')
+        } else {
+            video2.pause()
+            playButton2.classList.remove('video__controls-play--active')
+        }
+    })
+
+    const volume2 = document.getElementById('video__controls-volume2')
+    video2.volume = '0.3'
+    volume2.addEventListener('mousemove', (e) => {
+        video2.volume = e.target.value
+    })
+
+    const progress2 = document.getElementById('video-progress2')
+
+    video2.addEventListener('timeupdate', () => {
+        const progressBar = progress2.querySelector('.video__progress-filled')
+        const percentage = (video2.currentTime / video2.duration) * 100
+        progressBar.style.width = `${percentage}%`
+    })
+
+
+
+
 
 
 })()
@@ -333,52 +419,3 @@
 
 
 
-
-
-
-
-// const navOpenerFooter = document.querySelectorAll('.footer__nav-title')
-
-    // navOpenerFooter.forEach((e) => {
-    //     e.addEventListener("click", function () {
-    //         const navToggle = e.nextElementSibling
-    //         navToggle.classList.toggle('footer__nav-list--opened')
-    //     })
-    // })
-
-
-
-
-
-
-    // const navTitle = document.querySelectorAll('.nav__title');
-    //     const navItem = document.querySelectorAll('.nav__items-plus');
-    //     navItem.forEach((e) => {
-    //         console.log(e)
-    //         if (!document.body.classList.contains('body--opened-menu')) {
-    //             navItem.classList.remove('nav__items-plus--opened');
-    //             navItem.style.maxHeight = 0;
-    //         }
-    //     })
-
-
-    // Nav в Burger
-
-    // const navOpenerHeader = document.querySelectorAll('.nav__title')
-
-    // navOpenerHeader.forEach((e) => {
-    //     e.addEventListener("click", function () {
-    //         const navToggle = e.nextElementSibling
-    //         if (navToggle !== null) {
-    //             navToggle.classList.toggle('nav__items-plus--opened')
-    //         }
-    //     })
-    // })
-
-
-    // const clickBody = document.body.addEventListener('click', navClosePlus)
-    // const navItemPlus = document.querySelector('.nav__items-plus');
-
-    // function navClosePlus(){
-    //     if (clickBody) navItemPlus.style.maxHeight = 0;
-    // }
