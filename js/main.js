@@ -404,10 +404,46 @@
     })
 
 
+    // Swiper Testimonials-Clients
+
+    new Swiper('.testimonialsClients__slider', {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.testimonialsClients__next',
+            prevEl: '.testimonialsClients__prev',
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 1.2,
+            },
+            1200: {
+                slidesPerView: 1.5,
+            }
+        },
+    });
 
 
 
+//Testimonials-Clients Show More button
 
+    const btnMore = document.querySelector('.testimonialsClients__button')
+    btnMore.addEventListener('click', btnMoreOpener)
+
+    function btnMoreOpener() {
+        const dots = document.getElementById('more__dots');
+        const moreText = document.getElementById('more');
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnMore.innerHTML = "Показать больше";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnMore.innerHTML = "Показать меньше";
+            moreText.style.display = "inline";
+        }
+    }
 })()
 
 
