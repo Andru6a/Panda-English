@@ -444,6 +444,13 @@
             moreText.style.display = "inline";
         }
     }
+
+    const allTestimonials = document.querySelectorAll('.testimonialsClients__slide')
+    const numberTestimonials = document.querySelector('.testimonialsCliens__queantity')
+    numberTestimonials.textContent = allTestimonials.length
+    // console.log(allTestimonials)
+
+    
 })()
 
 
