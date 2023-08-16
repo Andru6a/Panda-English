@@ -73,6 +73,9 @@ body {
     &__numbers {
         overflow: visible;
     }
+    &__teachers{
+        // overflow: visible;
+    }
 }
 
 .button {
@@ -152,6 +155,10 @@ body {
 }
 
 .main__testimonialsClients {
+    padding-bottom: 90px;
+}
+
+.main__teachers {
     padding-bottom: 90px;
 }
 

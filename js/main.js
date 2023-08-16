@@ -425,7 +425,7 @@
 
 
 
-//Testimonials-Clients Show More button
+    //Testimonials-Clients Show More button
 
     const btnMore = document.querySelector('.testimonialsClients__button')
     btnMore.addEventListener('click', btnMoreOpener)
@@ -450,7 +450,27 @@
     numberTestimonials.textContent = allTestimonials.length
     // console.log(allTestimonials)
 
-    
+
+
+
+    // Swiper Teachers
+
+    new Swiper('.teachers__slider', {
+        slidesPerView: 1.5,
+        centeredSlides: true,
+        breakpoints:{
+            600:{
+        slidesPerView: 3,
+            }
+        }
+    });
+
+
+
+    // const textCircle = document.querySelector('.test')
+    // textCircle.innerHTML = textCircle.innerText.split('').map((char, i) =>
+    // `<span style='transform:rotate(${i * 8.1}deg)'>${char}</span>`
+    // ).join('')
 })()
 
 
