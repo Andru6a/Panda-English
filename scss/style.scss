@@ -1102,7 +1102,6 @@
     }
 }
 
-
 // =============TestimonialsClients================================
 
 .testimonialsClients {
@@ -1224,7 +1223,6 @@
 }
 
 // =============Teachers================================
-
 
 .teachers {
     &__inner {}
@@ -1376,6 +1374,201 @@
     }
 }
 
+// =============Blog================================
+
+
+.blog {
+
+    &__inner {}
+
+    &__title {
+        margin-bottom: 50px;
+
+        & span {
+            color: $text-accent1;
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__item {
+        max-width: 400px;
+        border-radius: 32px;
+        border: 1px solid $bg-grey;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0px 0px 6px 0px $bg-grey inset;
+        }
+
+        &__item-link {}
+
+        &-inner {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+        }
+
+        &-top {
+            color: $text-accent1;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.33;
+            letter-spacing: -0.018px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &-top--last{
+            gap: 10px;
+            justify-content: start;
+        }
+
+
+        &-content {}
+
+        &-title {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.18;
+            margin-bottom: 32px;
+            max-height: 350px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0.5;
+        }
+    }
+
+    &__top-last {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &:last-child{
+            display: block;
+        }
+    }
+
+    &__info-views {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -0.014px;
+
+        &::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url('../Images/Icons/Icons-blog/eye.svg') 0 0 / 20px 20px no-repeat;
+        }
+    }
+
+    &__info-date {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        &::before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            background: url('../Images/Icons/calendar.svg') 0 0 / 18px 18px no-repeat;
+        }
+    }
+
+    &__info-button {
+        .link-arrow {
+            background: transparent;
+        }
+    }
+
+    &__accordeon {}
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+        transition: $transition;
+
+        .link-arrow {
+            background: transparent;
+        }
+    }
+}
+
+// Blog tegs
+.learning {
+    color: $text-accent1;
+}
+.learning--dot {
+    color: $text-accent1;
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $text-accent1;
+    }
+}
+.lifehuck {
+    color: $text-accent3;
+}
+.lifehuck--dot {
+    color: $text-accent3;
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $text-accent3;
+    }
+}
+.tests {
+    color: $text-accent4;
+}
+.tests--dot {
+    color: $text-accent4;
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $text-accent4;
+    }
+}
+.interesting {
+    color: $text-accent2;
+}
+
+.accordion-list {
+
+    &__item {}
+
+    &__control {}
+
+    &__content {}
+}
+
+.accordion-content {
+
+    &__col {}
+}
 
 
 
@@ -2059,7 +2252,7 @@
 
     .bonus {
         &__slider--mobile.swiper {
-            height: 100px;
+            height: 180px;
         }
 
         &__head {
@@ -2728,6 +2921,12 @@
 
     // =============teachers======================
     .teachers {
+        &__slider-inner {
+            margin-left: -20%;
+        }
+
+        &__slider {}
+
         &__slide {
             &-content {
                 width: 100px;
@@ -2737,12 +2936,17 @@
                 font-size: 11px;
                 letter-spacing: 0.35px;
             }
-            & svg{
-                top: -17%;
-                left: -18%;
-                width: 55%;
-                height: 57%;
+
+            & svg {
+                top: 2%;
+                left: 4%;
+                width: 17%;
+                height: 18%;
             }
+        }
+
+        &__slide.swiper-slide-active {
+            margin-right: 30px;
         }
     }
 }
@@ -2776,4 +2980,11 @@
         }
     }
 
+    // ==============Teachers================================
+
+    .teachers {
+        &__slide.swiper-slide-active {
+            margin-right: 50px;
+        }
+    }
 }

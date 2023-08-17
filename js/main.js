@@ -404,7 +404,8 @@
     })
 
 
-    // Swiper Testimonials-Clients
+
+    // ==============================Swiper Testimonials-Clients==============================
 
     new Swiper('.testimonialsClients__slider', {
         slidesPerView: 1.2,
@@ -422,7 +423,6 @@
             }
         },
     });
-
 
 
     //Testimonials-Clients Show More button
@@ -448,29 +448,27 @@
     const allTestimonials = document.querySelectorAll('.testimonialsClients__slide')
     const numberTestimonials = document.querySelector('.testimonialsCliens__queantity')
     numberTestimonials.textContent = allTestimonials.length
-    // console.log(allTestimonials)
 
 
-
-
-    // Swiper Teachers
+    // ==============================Swiper Teachers==============================
 
     new Swiper('.teachers__slider', {
-        slidesPerView: 1.5,
+        slidesPerView: 1.8,
         centeredSlides: true,
-        breakpoints:{
-            600:{
-        slidesPerView: 3,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+            450: {
+                slidesPerView: 1.8,
+            },
+            600: {
+                slidesPerView: 3,
             }
         }
     });
 
 
 
-    // const textCircle = document.querySelector('.test')
-    // textCircle.innerHTML = textCircle.innerText.split('').map((char, i) =>
-    // `<span style='transform:rotate(${i * 8.1}deg)'>${char}</span>`
-    // ).join('')
 })()
 
 

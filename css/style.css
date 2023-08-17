@@ -115,6 +115,7 @@ body {
   line-height: 1.08;
   color: #05203E;
   background: #FFFFFF;
+  height: auto;
 }
 
 .body--opened-nav1 .nav__title-arrow1 {
@@ -150,6 +151,7 @@ body {
 .wrapper {
   min-height: 100%;
   width: 100%;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,24 +165,23 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  border-radius: 0px 0px 50px 50px;
+  -webkit-box-shadow: 0px 58px 87px -58px rgba(24, 39, 75, 0.12), 0px 26px 28px -14px rgba(24, 39, 75, 0.24);
+          box-shadow: 0px 58px 87px -58px rgba(24, 39, 75, 0.12), 0px 26px 28px -14px rgba(24, 39, 75, 0.24);
 }
 
 .container {
-  overflow: hidden;
   max-width: 1270px;
   margin: 0 auto;
   padding: 0 15px;
   height: 100%;
 }
 .container__header {
-  overflow: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.container__numbers {
-  overflow: visible;
-}
+
 .button {
   position: relative;
   display: -webkit-box;
@@ -268,6 +269,10 @@ body {
 
 .main__teachers {
   padding-bottom: 90px;
+}
+
+.main__blog {
+  padding-bottom: 70px;
 }
 
 .footer {
@@ -595,14 +600,15 @@ body {
           justify-content: center;
   z-index: 151;
   opacity: 0.88;
+  margin-right: 10px;
 }
 
 .burger-icon span,
 .burger-icon span::before,
 .burger-icon span::after {
   display: block;
-  width: 14px;
-  height: 2px;
+  width: 20px;
+  height: 3px;
   border-radius: 100px;
   background: #05203E;
   -webkit-transition: all 0.4s;
@@ -2227,6 +2233,197 @@ body {
   background: linear-gradient(133deg, rgba(2, 150, 229, 0.82) 0%, #0296E5 100%);
 }
 
+.blog__title {
+  margin-bottom: 50px;
+}
+.blog__title span {
+  color: #7BB745;
+}
+.blog__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.blog__item {
+  max-width: 400px;
+  border-radius: 32px;
+  border: 1px solid #D6DADE;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.blog__item:hover {
+  -webkit-box-shadow: 0px 0px 6px 0px #D6DADE inset;
+          box-shadow: 0px 0px 6px 0px #D6DADE inset;
+}
+.blog__item-inner {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 70px;
+}
+.blog__item-top {
+  color: #7BB745;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.018px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.blog__item-top--last {
+  gap: 10px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.blog__item-title {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.18;
+  margin-bottom: 32px;
+  max-height: 350px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog__item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  opacity: 0.5;
+}
+.blog__top-last {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.blog__top-last:last-child {
+  display: block;
+}
+.blog__info-views {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.014px;
+}
+.blog__info-views::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("../Images/Icons/Icons-blog/eye.svg") 0 0/20px 20px no-repeat;
+}
+.blog__info-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.blog__info-date::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url("../Images/Icons/calendar.svg") 0 0/18px 18px no-repeat;
+}
+.blog__info-button .link-arrow {
+  background: transparent;
+}
+.blog__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.blog__button .link-arrow {
+  background: transparent;
+}
+
+.learning {
+  color: #7BB745;
+}
+
+.learning--dot {
+  color: #7BB745;
+}
+.learning--dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7BB745;
+}
+
+.lifehuck {
+  color: #FF76A7;
+}
+
+.lifehuck--dot {
+  color: #FF76A7;
+}
+.lifehuck--dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF76A7;
+}
+
+.tests {
+  color: #0296E5;
+}
+
+.tests--dot {
+  color: #0296E5;
+}
+.tests--dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0296E5;
+}
+
+.interesting {
+  color: #FAC017;
+}
+
 /*================================================*/
 /*================================================*/
 /*================================================*/
@@ -2784,7 +2981,7 @@ body {
     margin-right: 0;
   }
   .bonus__slider--mobile.swiper {
-    height: 100px;
+    height: 180px;
   }
   .bonus__head img {
     display: none;
@@ -3278,6 +3475,9 @@ body {
     margin-top: 16px;
     font-size: 16px;
   }
+  .teachers__slider-inner {
+    margin-left: -20%;
+  }
   .teachers__slide-content {
     width: 100px;
   }
@@ -3286,10 +3486,13 @@ body {
     letter-spacing: 0.35px;
   }
   .teachers__slide svg {
-    top: -17%;
-    left: -18%;
-    width: 55%;
-    height: 57%;
+    top: 2%;
+    left: 4%;
+    width: 17%;
+    height: 18%;
+  }
+  .teachers__slide.swiper-slide-active {
+    margin-right: 30px;
   }
 }
 @media (max-width: 400px) {
@@ -3302,5 +3505,8 @@ body {
   }
   .numbers__item-text {
     max-width: 105px;
+  }
+  .teachers__slide.swiper-slide-active {
+    margin-right: 50px;
   }
 }

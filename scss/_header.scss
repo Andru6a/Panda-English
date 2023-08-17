@@ -32,8 +32,6 @@
             height: 40px;
         }
     }
-
-
 }
 
 .nav {
@@ -210,14 +208,15 @@
     justify-content: center;
     z-index: 151;
     opacity: 0.88;
+    margin-right: 10px;
 }
 
 .burger-icon span,
 .burger-icon span::before,
 .burger-icon span::after {
     display: block;
-    width: 14px;
-    height: 2px;
+    width: 20px;
+    height: 3px;
     border-radius: 100px;
     background: $text-primary;
     transition: $transition;
@@ -241,17 +240,13 @@
     bottom: -8px;
 }
 
-
 // ===================Открытие/Закрытие бургера===============================
-
-
 
 .body--opened-menu .nav {
     transform: translateY(0%);
     opacity: 1;
     visibility: visible;
 }
-
 
 // ==========================HERO=========================================
 
