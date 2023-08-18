@@ -1,7 +1,7 @@
 (function () {
 
 
-    // =================Навигация==============================================================
+    // =================Навигация PC==============================================================
 
     document.addEventListener('click', navLinks)
 
@@ -45,7 +45,7 @@
 
 
 
-    // =========================Замена текста в Hero button==========================================
+    // =========================Замена текста в button==========================================
 
     document.addEventListener('scroll', changeButton)
 
@@ -70,9 +70,7 @@
     // ==============================Бургер ====================================================
 
     document.addEventListener('click', burgerInit)
-
     function burgerInit(e) {
-
         const burgerIcon = e.target.closest('.burger-icon')
         const burgerNavLink = e.target.closest('.nav__link')
         const burgerNavLink2 = e.target.closest('.nav__title--special')
@@ -81,7 +79,6 @@
         if (!burgerIcon && !burgerNavLink && !burgerNavLink2) return
         if (document.documentElement.clientWidth > 900) return
 
-        e.preventDefault()
         if (!document.body.classList.contains('body--opened-menu')) {
             document.body.classList.add('body--opened-menu')
             headerBg.classList.add('header__top--none')
@@ -102,20 +99,23 @@
 
 
 
-    // ==============================Nav Header==============================
+    // ==============================Nav Header Burger==============================
 
     const navTitle = document.querySelectorAll('.nav__title');
     const navItem = document.querySelector('.nav__items-plus');
     navTitle.forEach((e) => {
+
         e.addEventListener('click', () => {
-            const navToggle = e.nextElementSibling
-            if (navToggle !== null) {
-                if (navToggle.classList.contains('nav__items-plus--opened')) {
-                    navToggle.classList.remove('nav__items-plus--opened');
-                    navToggle.style.maxHeight = 0;
-                } else {
-                    navToggle.classList.add('nav__items-plus--opened');
-                    navToggle.style.maxHeight = navItem.scrollHeight + 'px';
+            if (document.documentElement.clientWidth < 900) {
+                const navToggle = e.nextElementSibling
+                if (navToggle !== null) {
+                    if (navToggle.classList.contains('nav__items-plus--opened')) {
+                        navToggle.classList.remove('nav__items-plus--opened');
+                        navToggle.style.maxHeight = 0;
+                    } else {
+                        navToggle.classList.add('nav__items-plus--opened');
+                        navToggle.style.maxHeight = navItem.scrollHeight + 'px';
+                    }
                 }
             }
         });
@@ -193,8 +193,8 @@
 
     new Swiper('.why__slider', {
         effect: 'cards',
-        direction: 'vertical',
         grabCursor: true,
+        direction: 'vertical',
         cardsEffect: {
             slideShadows: false,
             perSlideOffset: 10,
@@ -469,6 +469,66 @@
 
 
 
+    // ==============================Blog Accordion==============================
+
+    // Кнопка показать больше
+    const buttonAccordion = document.querySelector('.blog__accordeon-button')
+    buttonAccordion.addEventListener('click', allAcordionShow)
+    function allAcordionShow(e) {
+        const accordionAll = document.querySelector('.blog__accordeon')
+        if (accordionAll.classList.contains('blog__accordeon-show')) {
+            accordionAll.classList.remove('blog__accordeon-show')
+            buttonAccordion.innerHTML = "Показать больше"
+        }
+        else {
+            accordionAll.classList.add('blog__accordeon-show')
+            buttonAccordion.innerHTML = "Показать меньше"
+        }
+    }
+
+    // Аккордеон
+    const accordionLists = document.querySelectorAll('.accordion-list');
+
+    accordionLists.forEach(el => {
+        // Для того, чтобы первый элеменет аккордеона был открыт со старта
+        // document.querySelector('.accordion-list__item--opened .accordion-list__content').style.maxHeight = document.querySelector('.accordion-list__item--opened .accordion-list__content').scrollHeight + 'px';
+
+        el.addEventListener('click', (e) => {
+
+            const accordionList = e.currentTarget
+            const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+            const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+
+            const accordionControl = e.target.closest('.accordion-list__control');
+            if (!accordionControl) return
+            e.preventDefault()
+            const accordionItem = accordionControl.parentElement;
+            const accordionContent = accordionControl.nextElementSibling;
+            const accordionPreview = accordionControl.querySelector('.accordion-list__control-preview')
+
+            if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+                accordionOpenedItem.classList.remove('accordion-list__item--opened');
+                accordionOpenedContent.style.maxHeight = null;
+            }
+            accordionItem.classList.toggle('accordion-list__item--opened');
+
+            if (accordionItem.classList.contains('accordion-list__item--opened')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                accordionPreview.style.display = 'none'
+            } else {
+                accordionContent.style.maxHeight = null;
+                accordionPreview.style.display = 'block'
+
+            }
+        });
+
+    });
+
+    // Масска для телефона
+
+    const telInputs = document.querySelectorAll('input[type="tel"]')
+    const im = new Inputmask('+7 (999) 999-99-99')
+    im.mask(telInputs)
 })()
 
 

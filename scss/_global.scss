@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
+
 body {
     font-family: "Museo Sans Cyrl", "Arial", sans-serif;
     line-height: 1.08;
@@ -160,6 +165,10 @@ body {
     padding-bottom: 70px;
 }
 
+.main__contacts {
+    padding-bottom: 70px;
+}
+
 .footer {
     padding: 100px 0 0;
 }
@@ -192,11 +201,6 @@ body {
 // =================NAV OPEN ===============
 .body--opened-menu {
     overflow: hidden;
-
-    & .header__top {
-        // transition: $transition;
-        // backdrop-filter: none;
-    }
 }
 
 .body--opened-menu .burger-icon span {

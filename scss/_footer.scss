@@ -2,7 +2,6 @@
 
 
 .footer {
-    &__inner {}
 
     &__row {
         margin-bottom: 25px;
@@ -53,7 +52,6 @@
             }
         }
 
-        &-content {}
 
         &-link {
             font-size: $fz-main;
@@ -91,7 +89,6 @@
             margin-right: 30px;
         }
 
-        &-col {}
 
         &-title {
             cursor: default;
@@ -186,7 +183,6 @@
 
         }
 
-        &-logo {}
 
         &-info {
             font-size: 14px;
@@ -196,7 +192,6 @@
             & a {
                 border-bottom: 1px solid $text-primary;
                 display: inline-block;
-                // text-transform: capitalize;
                 line-height: .9;
             }
         }
@@ -248,7 +243,6 @@
         justify-content: space-between;
         padding-top: 25px;
 
-        &-info {}
 
         &-year {
             display: flex;
