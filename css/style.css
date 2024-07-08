@@ -2064,6 +2064,7 @@ body {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  z-index: 10;
 }
 .testimonialsClients__slider::after {
   content: "";
@@ -2078,10 +2079,14 @@ body {
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
 }
+.testimonialsClients__slider-inner {
+  max-width: 700px;
+}
 .testimonialsClients__slide {
   border-radius: 32px;
   border: 1px solid #D6DADE;
   padding: 40px;
+  max-width: 500px;
 }
 .testimonialsClients__slide.swiper-slide {
   height: auto;

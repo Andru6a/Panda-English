@@ -1125,6 +1125,7 @@
     &__prev,
     &__next {
         transform: rotate(-90deg);
+        z-index: 10;
     }
 
     &__slider {
