@@ -1140,13 +1140,17 @@
             background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.56) 48.39%, rgba(255, 255, 255, 0.00) 100%);
             backdrop-filter: blur(1px);
         }
-    }
 
+        &-inner {
+            max-width: 700px;
+        }
+    }
 
     &__slide {
         border-radius: 32px;
         border: 1px solid $bg-grey;
         padding: 40px;
+        max-width: 500px;
     }
 
     &__slide.swiper-slide {
